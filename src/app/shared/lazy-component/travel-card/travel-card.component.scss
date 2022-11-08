@@ -1,0 +1,62 @@
+@import'./../../../../theme/varriable';
+/***** travel-card ****/
+.travel-card{
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.travel-img{
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-bottom: 8px;
+}
+.travel-img img{
+    height: 280px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 7px;
+    display: block;
+}
+.travel-tag{
+    display: block;
+}
+.travel-tag span{
+    color: #faf9fb;
+    background: #150127;
+    border: 1px solid #150127;
+    font-family: $font-en-primary;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    padding: 3px 15px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    border-radius: 5px;
+}
+.travel-card-body{
+    display: block;
+    width: 100%;
+}
+.travel-card-body h3{
+    color: #fff;
+    font-family: $font-en-primary;
+    font-weight: 500;
+    font-size: 17px;
+    display: block;
+    line-height: 24px;
+    margin-bottom: 6px!important;
+}
+.travel-card-body p{
+    color: #fff;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    display: block;
+    line-height: 19px;
+    font-family: $font-en-primary;
+    margin-bottom: 2px!important;
+}

@@ -1,0 +1,105 @@
+.privacy-policy-page{
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing:border-box;
+    padding: 10vh 0px;
+}
+.privacy-policy-container{
+    max-width: 1440px;
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+.privacy-policy-main{
+    display: block;
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+.privacy-policy-title{
+    display: block;
+    margin-bottom: 4vh;
+}
+.privacy-policy-title h1{
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Poppins',sans-serif;
+    font-size: 30px;
+    color: #212121;
+    display: block;
+    line-height: 37px;
+    letter-spacing: 1px;
+}
+.privacy-policy-details{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 1080px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.privacy-policy-details-title{
+    display: block;
+    margin-bottom: 8px;
+}
+.privacy-policy-details-title h3{
+    color: #757575;
+    line-height: 25px;
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+}
+.privacy-policy-description{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.privacy-policy-description p{
+    color: #757575;
+    line-height: 25px;
+    font-size:15px;
+    font-weight: 400;
+    font-family: 'Poppins',sans-serif;
+    display: block;
+    text-align: justify;
+}
+.privacy-policy-description ul{
+    margin-top: 15px;
+    display: block;
+    margin-bottom: 15px;
+}
+.privacy-policy-description ul li{
+    color: #757575;
+    line-height: 25px;
+    font-size:15px;
+    font-weight: 400;
+    font-family: 'Poppins',sans-serif;
+    display: block;
+    text-align: justify;
+    margin-bottom: 7px;
+}
+@media(max-width:450px){
+    .privacy-policy-page{
+        padding: 8vh 0px;
+    }
+    .privacy-policy-title{
+        margin-bottom: 3vh;
+    }
+    .privacy-policy-title h1{
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+    }
+    .privacy-policy-details-title{
+        margin-bottom: 7px;
+    }
+    .privacy-policy-details-title h3{
+        font-size: 15px;
+    }
+    .privacy-policy-description p,.privacy-policy-description ul li{
+        font-size: 14px;
+        line-height: 23px;
+    }
+}

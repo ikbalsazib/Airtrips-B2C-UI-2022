@@ -1,0 +1,215 @@
+<div class="section1-area">
+  <div class="container">
+    <!---section1-title-area-->
+    <div class="section1-title">
+      <h3>Find and compare cheap flights</h3>
+    </div>
+    <!--section1-main-->
+    <!---trip-tap-->
+    <div class="trip-tap">
+      <ul>
+        <li [matMenuTriggerFor]="tripMenu">
+          <button>
+            {{ selectedTrip?.viewValue }} <i class="fa fa-angle-down"></i>
+          </button>
+        </li>
+        <mat-menu class="trip-select" #tripMenu="matMenu">
+          <button mat-menu-item *ngFor="let data of trips">
+            {{ data?.viewValue }}
+          </button>
+        </mat-menu>
+
+        <li [matMenuTriggerFor]="person">
+          <button>
+            {{ adultCounter }} Adult
+            {{ childCounter ? childCounter + " Child " : "" }}
+            {{ infantCounter ? infantCounter + " Infant " : ""
+            }}<i class="fa fa-angle-down"></i>
+          </button>
+        </li>
+        <!--person-->
+        <mat-menu class="person-select" #person="matMenu">
+          <div class="person">
+            <div class="person-info">
+              <ul>
+                <!-- <li *ngFor="let data of [1,2,4,4,5]"></li> -->
+                <li>
+                  <!---person-left-->
+                  <div class="person-left">
+                    <h3>Adults</h3>
+                    <span>12+ Yrs</span>
+                  </div>
+                  <!--quantity-->
+                  <div class="quantity">
+                    <!---mines-->
+                    <div class="mines">
+                      <button>-</button>
+                    </div>
+                    <!---input-box-->
+                    <div class="quantity-input">
+                      <input type="text" value="0"/>
+                    </div>
+                    <!---mines-->
+                    <div class="plus">
+                      <button>+</button>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!---person-left-->
+                  <div class="person-left">
+                    <h3>Childs</h3>
+                    <span>(2 - 12 Yrs)</span>
+                  </div>
+                  <!--quantity-->
+                  <div class="quantity">
+                    <!---mines-->
+                    <div class="mines">
+                      <button>-</button>
+                    </div>
+                    <!---input-box-->
+                    <div class="quantity-input">
+                      <input type="text" value="0"/>
+                    </div>
+                    <!---mines-->
+                    <div class="plus">
+                      <button>+</button>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <!---person-left-->
+                  <div class="person-left">
+                    <h3>Infant</h3>
+                    <span>(0 - 2 Yrs)</span>
+                  </div>
+                  <!--quantity-->
+                  <div class="quantity">
+                    <!---mines-->
+                    <div class="mines">
+                      <button>-</button>
+                    </div>
+                    <!---input-box-->
+                    <div class="quantity-input">
+                      <input type="text" value="0"/>
+                    </div>
+                    <!---mines-->
+                    <div class="plus">
+                      <button>+</button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button class="person-info-button" type="submit" mat-raised-button style="width: 100%">
+              Done
+            </button>
+          </div>
+        </mat-menu>
+        <li [matMenuTriggerFor]="seatMenu">
+          <button>
+            {{ selectedClass?.viewValue }} <i class="fa fa-angle-down"></i>
+          </button>
+        </li>
+        <!-- -seat-select -->
+        <mat-menu class="seat-select" #seatMenu="matMenu">
+          <button mat-menu-item *ngFor="let data of airClasses">
+            {{ data?.viewValue }}
+          </button>
+        </mat-menu>
+      </ul>
+    </div>
+    <div class="section1-main">
+      <div class="search">
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+          <!---oneway-return-area-->
+          <div class="oneway-return-area">
+            <!---form-input-area-->
+            <!--            [class]="oneWay ? 'no' : 'form-input-area-controll'"-->
+            <div class="form-input-area">
+              <div class="from">
+                <mat-form-field appearance="outline" class="w-100">
+                  <!-- <mat-label>From</mat-label> -->
+                  <input matInput placeholder="From"  formControlName="from"
+                         [matAutocomplete]="fromAuto"/>
+                  <mat-icon matSuffix>place</mat-icon>
+                  <mat-autocomplete #fromAuto="matAutocomplete" [displayWith]="getOptionText">
+                    <mat-option *ngFor="let item of filteredOptionsFrom" [value]="item">
+                      <div class="autoComTag">
+                        <div class="autoComTagContent">
+                          <p>{{ item.name | airNameSplit: 0 }}</p>
+                          <p class="airportName">
+                            {{ item.name | airNameSplit: 1 }}
+                          </p>
+                        </div>
+                        <div class="autoComTagContentRight">
+                          <p>{{ item.value }}</p>
+                        </div>
+                      </div>
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </div>
+
+              <div class="to">
+                <mat-form-field appearance="outline" class="w-100">
+
+                  <input matInput placeholder="To"  formControlName="to" [matAutocomplete]="toAuto"
+                  />
+                  <mat-icon matSuffix>place</mat-icon>
+                  <mat-autocomplete #toAuto="matAutocomplete" [displayWith]="getOptionText">
+                    <mat-option *ngFor="let item of filteredOptionsTo" [value]="item">
+
+                      <div class="autoComTag">
+                        <div class="autoComTagContent">
+                          <p>{{ item.name | airNameSplit: 0 }}</p>
+                          <p class="airportName">
+                            {{ item.name | airNameSplit: 1 }}
+                          </p>
+                        </div>
+                        <div class="autoComTagContentRight">
+                          <p>{{ item.value }}</p>
+                        </div>
+                      </div>
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </div>
+              <div class="date">
+                <mat-form-field appearance="outline">
+
+                  <input readonly matInput [matDatepicker]="datePicker1" formControlName="depart" placeholder="Depart"
+                          [min]="minDate"/>
+                  <mat-datepicker-toggle matSuffix [for]="datePicker1">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #datePicker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="date">
+                <mat-form-field appearance="outline">
+
+                  <input readonly matInput [matDatepicker]="datePicker2" formControlName="return" placeholder="Return"
+                         [min]="minDate"/>
+                  <mat-datepicker-toggle matSuffix [for]="datePicker2">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #datePicker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="search-btn">
+            <button type="submit" class="btn-search" mat-raised-button color="primary">
+              <mat-icon>search</mat-icon>
+              Search
+            </button>
+          </div>
+        </form>
+        <!---oneway-return-end-->
+      </div>
+    </div>
+  </div>
+</div>

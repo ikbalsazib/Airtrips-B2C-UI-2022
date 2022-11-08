@@ -1,0 +1,39 @@
+<div class="header">
+  <h2>Order List</h2>
+</div>
+
+<hr class="center-square">
+
+
+<div class="table-container">
+  <table>
+    <thead>
+    <tr class="table-head">
+      <th scope="col">{{'Ticket ID'}}</th>
+      <th scope="col">{{'Seats'}}</th>
+      <th scope="col">{{'Payment Status'}}</th>
+      <th scope="col">{{'Date'}}</th>
+      <th scope="col">{{'Schedule'}}</th>
+      <th scope="col">{{'Total Fare'}}</th>
+      <th scope="col">{{'Booking Amount'}}</th>
+    </tr>
+    </thead> <!-- End Table Head -->
+    <tr>
+      <!-- <td [attr.data-label]="'Ticket ID'">TKT{{launchTicket?.ticketNo}}</td>
+      <td [attr.data-label]="'Seats'">{{seatsString}}</td>
+      <td [attr.data-label]="'Payment Status'" [ngClass]="[launchTicket?.paymentStatus === 'paid' ? 'paid' : 'unpaid']">{{launchTicket?.paymentStatus | titlecase}}</td>
+      <td [attr.data-label]="'Date'">{{launchTicket?.trip?.dateString}}</td>
+      <td [attr.data-label]="'Schedule'">{{launchTicket?.trip?.schedule?.timeString}}</td>
+      <td [attr.data-label]="'Total Fare'">{{launchTicket?.totalAmount}}</td>
+      <td [attr.data-label]="'Booking Amount'">{{launchTicket?.paidAmount}}</td> -->
+    </tr><!-- End Table Body -->
+
+  </table>
+
+  <div class="action">
+    <p>Your payment is not success. Please pay again for finalize your ticket.</p>
+    <button mat-raised-button color="primary" (click)="sslInitWithOrder(launchTicket?._id)">Pay Now</button>
+  </div>
+
+
+</div>

@@ -1,0 +1,128 @@
+@import'./../../../../theme/varriable';
+.cooming-soon-area{
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1199;
+}
+.comming-img{
+    display: block;
+    width: 100%;
+}
+.comming-img img{
+    opacity: 0.3;
+    height: 100vh;
+}
+.banner-info{
+    width: 100%;
+    height:99%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.banner-main{
+    background-color: rgb(255 255 255 /80%);
+    padding: 70px 50px;
+    box-sizing: border-box;
+    border: 1px solid $color-primary;
+    border-radius: 15px;
+}
+
+.banner-title{
+    display: block;
+    margin-bottom: 30px;
+}
+.banner-title h1{
+    color: $color-primary1;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 45px;
+    display: block;
+    font-family: $font-en-primary1;
+    letter-spacing: 2px;
+    line-height:50px;
+    text-shadow: 3px 3px 7px rgb(0 0 0/20%);
+}
+.banner-title h2{
+    color: $color-primary1;
+    font-style: normal;
+    font-weight: 00;
+    font-size: 30px;
+    display: block;
+    font-family: $font-en-primary1;
+    letter-spacing: 2px;
+    line-height: 44px;
+    text-shadow: 3px 3px 7px rgb(0 0 0/20%);
+}
+.store-btn{
+    display: block;
+}
+.store-btn ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.store-btn ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+.store-btn ul li:last-child{
+    margin: 0px;
+}
+.store-btn ul li a img{
+    display: block;
+    max-width: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+@media(max-width:600px){
+    .banner-title h1{
+
+        font-size: 37px;
+        line-height:45px;
+    }
+    .banner-title h2{
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+@media(max-width:500px){
+    .banner-main{
+        padding: 50px 40px;
+    
+    }
+    .banner-title h1{
+
+        font-size: 30px;
+        line-height:40px;
+    }
+    .banner-title h2{
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+@media(max-width:439px){
+    .store-btn ul li{
+        display:block;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    .store-btn ul li a img{
+        margin: auto;
+    }
+    .banner-main{
+        padding: 30px 20px;
+    
+    }
+}

@@ -1,0 +1,142 @@
+@import'./varriable';
+
+.other-login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-login-details {
+  width: 100%;
+  text-align: center;
+
+  .login-title-right {
+    width: 100%;
+    h3 {
+      padding: 10px;
+    }
+  }
+
+}
+
+.other-login h3 {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(255,255,255,.8);
+  font-family: $font-en;
+  width: 100%;
+  font-style: normal;
+  display: block;
+  font-weight: 400;
+  padding-bottom: 30px;
+}
+
+.other-login ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.other-login ul li {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 10px;
+
+}
+
+.other-login ul li:last-child {
+  margin-right: 0;
+}
+
+.login-facebook {
+  border: 1px solid #3b5998;
+  padding: 9px 30px;
+  box-sizing: border-box;
+  width: 200px!important;
+  color: #3b5998;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: $font-en;
+  background-color: #fff;
+  transform: skew(-15deg, 0deg);
+  transition: all 0.3s linear;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  i {
+    color: #3b5998;
+    transition: all 0.3s linear;
+  }
+}
+
+.login-facebook span {
+  color: #3b5998;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: all 0.3s linear;
+}
+
+.login-facebook:hover {
+  background-color: #3b5998;
+  color: #fff;
+  i {
+    color: #fff;
+  }
+}
+
+.login-facebook:hover span {
+  color: #fff;
+}
+
+
+.login-google {
+  border: 1px solid #eb3e32;
+  padding: 9px 30px;
+  max-width: 200px!important;
+  width: 100%!important;
+  box-sizing: border-box;
+  color: #eb3e32;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: $font-en;
+  background-color: #fff;
+  transform: skew(-15deg, 0deg);
+  transition: all 0.3s linear;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  text-decoration: none;
+  i {
+    color: #eb3e32;
+    transition: all 0.3s linear;
+  }
+}
+
+.login-google span {
+  color: #eb3e32;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: all 0.3s linear;
+}
+
+.login-google:hover {
+  background-color: #eb3e32;
+  color: #fff;
+  i {
+    color: #fff;
+  }
+}
+
+.login-google:hover span {
+  color: #fff;
+}
+
+.login-form form input:focus {
+  border-color: #06b487;
+}
+

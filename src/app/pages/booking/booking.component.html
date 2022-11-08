@@ -1,0 +1,695 @@
+<div class="section1-area">
+  <div class="container">
+    <div class="booking-container">
+      <div class="container-left">
+        <div class="selection">
+          <mat-icon>report_problem</mat-icon>
+          <p>Selected option is available in the updated fare</p>
+        </div>
+        <div class="flight">
+          <div class="booking-conf-header-container">
+            <div class="booking-conf-header">
+              <div class="logo">
+                <mat-icon> flight</mat-icon>
+                <h4>Flight Itinerary</h4>
+              </div>
+              <div class="id">
+                <h4>PNR:LLVGNH/Source:IA-DACHI3887</h4>
+              </div>
+            </div>
+            <button mat-button (click)="openDialog()">Fare Rules</button>
+          </div>
+          <div class="flight-hero">
+            <div class="top">
+              <small class="top-left">PRIVATE</small>
+              <div class="top-right">
+                <div class="mat-icon-fluid">
+                  <mat-icon> attach_money</mat-icon>
+                </div>
+                <small>Refundable</small>
+              </div>
+            </div>
+            <div>
+              <!-- {{ data | json }} -->
+              <div>
+                <div class="departure">
+                  <mat-icon> flight</mat-icon>
+                  <span>Departure || Return</span>
+                </div>
+                <div class="ticket-container">
+                  <!-- {{ seg | json }} -->
+                  <div class="destination">
+                    <span>Dhaka</span>
+                    <mat-icon>arrow_right_alt</mat-icon>
+                    <span>Sylhet</span>
+                    <small>Saturday, November 12, 2022</small>
+                  </div>
+                  <div class="ticket-body">
+                    <div class="biman-bd">
+                      <div class="biman-logo">
+                        <mat-icon>flight_takeoff</mat-icon>
+                      </div>
+                      <div class="text">
+                        <h5>US-Bangla Airlines</h5>
+                        <small>BS Y | 531</small>
+                      </div>
+                    </div>
+                    <div class="time-box">
+                      <h4> DAC <span>7:40:00 AM</span></h4>
+                      <p>Saturday, November 12, 2022 </p>
+                      <p> Hazrat Shahjalal International Airport</p>
+                      <p>Terminal </p>
+                    </div>
+                    <div class="time-count">
+                      <p>0h 50m</p>
+
+                      <div class="flight-dot">
+                        <mat-icon> flight</mat-icon>
+                        <span class="underline">
+                          <hr/>
+                        </span>
+                        <div class="dot">
+                          <!-- <span>{{ convertSteps(data) }}</span> -->
+                          <span>.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="time-box">
+                      <h4> ZYL <span>8:30:00 AM</span></h4>
+                      <p>Saturday, November 12, 2022 </p>
+                      <p> Civil Airport</p>
+                      <p>Terminal </p>
+                    </div>
+                    <div class="g">
+                      <mat-icon>event_seat</mat-icon>
+                      <small>S</small>
+                    </div>
+                    <div class="status">
+                      <div class="status-icon">
+                        <mat-icon> live_help</mat-icon>
+                        <small>AYQQWE</small>
+                      </div>
+                      <small>Status: BS</small>
+                    </div>
+                  </div>
+                  <div class="adult">
+                    <p>Adult</p>
+                    <div class="bag-icon">
+                      <mat-icon>business_center</mat-icon>
+                      <p>
+                        Check in:
+                        <small>20 Kg</small>
+                      </p>
+                    </div>
+                    <div class="bag-icon">
+                      <mat-icon>business_center</mat-icon>
+                      <p>
+                        Cabin-<small>7Kg</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hr-line"></div>
+              </div>
+            </div>
+
+            <div class="tabs-container">
+              <mat-tab-group animationDuration="0ms">
+                <mat-tab label="Cancellation">
+                  <div class="first-container">
+                    <div class="first-container-row">
+                      <div>
+                        <p>Time frame</p>
+                        <small>(from Scheduled flight departure)</small>
+                      </div>
+                      <div>
+                        <p>Airline Fee + Airtrips Fee</p>
+                        <small>(per passenger)</small>
+                      </div>
+                    </div>
+
+                    <div class="dashed"></div>
+                    <div class="first-container-row">
+                      <p>0 hours to 72 hours*</p>
+                      <p><small>Adult: </small><span> 2000.00+150</span></p>
+                    </div>
+                    <div class="dashed"></div>
+                    <div class="first-container-row">
+                      <p>72 hours to 365 days*</p>
+                      <p><small>Adult: </small><span> 1500.00+150</span></p>
+                    </div>
+                    <div class="first-container-row">
+                      <div>
+                        <p>Time frame</p>
+                        <small>(after flight departure)</small>
+                      </div>
+
+                      <div>
+                        <p>Airline Fee + Airtrips Fee</p>
+                        <small>(per passenger)</small>
+                      </div>
+                    </div>
+                    <div class="dotted"></div>
+                    <div class="first-container-row">
+                      <small>(after flight departure)</small>
+                      <p><small>Adult: </small><span> 2000.00+150</span></p>
+                    </div>
+                  </div>
+                </mat-tab>
+                <mat-tab label="Date Change">
+                  <div class="first-container">
+                    <div class="first-container-row">
+                      <div>
+                        <p>Time frame</p>
+                        <small>(from Scheduled flight departure)</small>
+                      </div>
+                      <div>
+                        <p>Airline Fee + Airtrips Fee</p>
+                        <small>(per passenger)</small>
+                      </div>
+                    </div>
+
+                    <div class="dashed"></div>
+                    <div class="first-container-row">
+                      <p>0 hours to 72 hours*</p>
+                      <p><small>Adult: </small><span> 2000.00+150</span></p>
+                    </div>
+                    <div class="dashed"></div>
+                    <div class="first-container-row">
+                      <p>72 hours to 365 days*</p>
+                      <p><small>Adult: </small><span> 1500.00+150</span></p>
+                    </div>
+                    <div class="first-container-row">
+                      <div>
+                        <p>Time frame</p>
+                        <small>(after flight departure)</small>
+                      </div>
+
+                      <div>
+                        <p>Airline Fee + Airtrips Fee</p>
+                        <small>(per passenger)</small>
+                      </div>
+                    </div>
+                    <div class="dotted"></div>
+                    <div class="first-container-row">
+                      <small>(after flight departure)</small>
+                      <p><small>Adult: </small><span> 2000.00+150</span></p>
+                    </div>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+            <div class="warning">
+              <mat-icon>report_problem</mat-icon>
+              <p>
+                Important: The airline is inductive. Airtrips does not gurantee
+                the accuracy of this information . All fees mentioned are not
+                passenger
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container-bottom">
+          <div class="passenger-detail">
+            <i class="fa-solid fa-user"></i>
+            <h3>Passenger detail</h3>
+            <p>(please specify the details as per the passport)</p>
+          </div>
+          <div class="container-bottom-body">
+            <div class="form-container">
+              <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+                <div formArrayName="adult">
+<!-- Adult form-->
+                  <div>
+                    <div class="adult1">
+                      <h3>
+                        Adult 1
+                      </h3>
+                    </div>
+                    <div class="inputs">
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>Title</mat-label>
+                        <mat-select
+                          formControlName="title">
+                          <mat-option
+                            *ngFor="let data of adultTitles"
+                            [value]="data.value">
+                            {{ data.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>First/Given Name</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="firstNameMulti"
+                          required/>
+                      </mat-form-field>
+
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>Last/Surname</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="lastNameMulti"
+                          required/>
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width" appearance="legacy">
+                        <mat-label>Passport Number</mat-label>
+                        <input type="number" matInput formControlName="passportMulti" required/>
+                      </mat-form-field>
+
+                      <div class="gender_option">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>Gender</mat-label>
+                          <mat-select
+                            formControlName="genderMulti"
+                            required>
+                            <mat-option
+                              *ngFor="let type of genders"
+                              [value]="type.value"
+                            >{{ type.viewValue }}</mat-option>
+                            <!-- <mat-option value="option">Female</mat-option>
+                              <mat-option value="option">Others</mat-option> -->
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+
+                      <mat-form-field color="accent" appearance="legacy">
+                        <mat-label>Date of birth</mat-label>
+                        <input
+                          matInput
+                          formControlName="birthDateMulti"
+                          required
+                          [matDatepicker]="picker2"
+                          [max]="maxAdultDate"
+                        />
+                        <mat-datepicker-toggle
+                          matSuffix
+                          [for]="picker2"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker
+                          #picker2
+                          color="primary"
+                        ></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+<!--Adult Form end-->
+<!--Child Form-->
+                <div formArrayName="child">
+                  <div>
+                    <div class="adult1">
+                      <h3>
+                        <!-- {{ flightResults[0]?.Fares[i]?.PaxType }} {{ i + 1 }} -->
+                        Child 1
+                      </h3>
+                    </div>
+                    <div class="inputs">
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>Title</mat-label>
+                        <mat-select formControlName="title" required>
+                          <mat-option
+                            *ngFor="let data of childTitles"
+                            [value]="data.value">
+                            {{ data.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>First/Given Name</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="firstNameMulti"
+                          required/>
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>Last/Surname</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="lastNameMulti"
+                          required/>
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy">
+                        <mat-label>Passport Number</mat-label>
+                        <input
+                          type="number"
+                          matInput
+                          formControlName="passportMulti"
+                          matInput
+                          required
+                        />
+                      </mat-form-field>
+                      <div class="gender_option">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>Gender</mat-label>
+                          <mat-select formControlName="genderMulti" required>
+                            <mat-option
+                              *ngFor="let type of genders"
+                              [value]="type.value"
+                            >{{ type.viewValue }}</mat-option
+                            >
+                            <!-- <mat-option value="option">Female</mat-option>
+                              <mat-option value="option">Others</mat-option> -->
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <mat-form-field color="accent" appearance="legacy">
+                        <mat-label>Date of birth</mat-label>
+                        <input
+                          matInput
+                          formControlName="birthDateMulti"
+                          required
+                          [matDatepicker]="picker2"
+                          [max]="maxChildDate"
+                          [min]="minChildDate"
+                        />
+                        <mat-datepicker-toggle
+                          matSuffix
+                          [for]="picker2"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker
+                          #picker2
+                          color="primary"
+                        ></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!-- <button
+                      class="submit-button"
+                      type="button"
+                      routerLink="/booking-confirmation"
+                    >
+                      Book and Hold
+                    </button> -->
+                </div>
+<!--Child Form end-->
+<!--Infant Form-->
+                <div formArrayName="infant">
+                  <div >
+                    <div class="adult1">
+                      <h3>
+                        <!-- {{ flightResults[0]?.Fares[i]?.PaxType }} {{ i + 1 }} -->
+                        Infant 1
+                      </h3>
+                      <!-- <div class="serch-bar">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>Find Traveler</mat-label>
+                          <input
+                            matInput
+                            placeholder="Find Traveler to autofill"
+                          />
+                          <mat-icon matSuffix>search</mat-icon>
+                        </mat-form-field>
+                      </div> -->
+                    </div>
+                    <div class="inputs">
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy"
+                      >
+                        <mat-label>Title</mat-label>
+                        <mat-select formControlName="title" required>
+                          <mat-option
+                            *ngFor="let data of childTitles"
+                            [value]="data.value"
+                          >
+                            {{ data.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy"
+                      >
+                        <mat-label>First/Given Name</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="firstNameMulti"
+                          required
+                        />
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy"
+                      >
+                        <mat-label>Last/Surname</mat-label>
+                        <input
+                          type="text"
+                          matInput
+                          formControlName="lastNameMulti"
+                          required
+                        />
+                      </mat-form-field>
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="legacy"
+                      >
+                        <mat-label>Passport Number</mat-label>
+                        <input
+                          type="number"
+                          matInput
+                          formControlName="passportMulti"
+                          matInput
+                          required
+                        />
+                      </mat-form-field>
+                      <div class="gender_option">
+                        <mat-form-field appearance="legacy">
+                          <mat-label>Gender</mat-label>
+                          <mat-select formControlName="genderMulti" required>
+                            <mat-option
+                              *ngFor="let type of genders"
+                              [value]="type.value"
+                            >{{ type.viewValue }}</mat-option
+                            >
+                            <!-- <mat-option value="option">Female</mat-option>
+                              <mat-option value="option">Others</mat-option> -->
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <mat-form-field color="accent" appearance="legacy">
+                        <mat-label>Date of birth</mat-label>
+                        <input
+                          matInput
+                          formControlName="birthDateMulti"
+                          required
+                          [matDatepicker]="picker2"
+                          [min]="minInfantDate"
+                          [max]="maxInfantDate"
+                        />
+                        <mat-datepicker-toggle
+                          matSuffix
+                          [for]="picker2"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker
+                          #picker2
+                          color="primary"
+                        ></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <!-- <button
+                      class="submit-button"
+                      type="button"
+                      routerLink="/booking-confirmation"
+                    >
+                      Book and Hold
+                    </button> -->
+                </div>
+<!--Infant Form end-->
+                <div class="check-box">
+                  <mat-checkbox formControlName="travelersMulti">
+                    Add these travellers tomy traveller List. You don't have to
+                    fill traveller info on your next visit.
+                  </mat-checkbox>
+                </div>
+                <hr/>
+                <div class="email-phone">
+                  <p>Booking details will be sent to</p>
+                  <div class="email-phone-input">
+                    <mat-form-field
+                      class="example-full-width"
+                      appearance="legacy">
+                      <mat-label>Email Address</mat-label>
+                      <input
+                        type="email"
+                        matInput
+                        formControlName="emailMulti"
+                        placeholder="Ex. pat@example.com"
+                        required
+                      />
+                      <mat-error>
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error>
+                        Email is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field
+                      class="example-full-width"
+                      appearance="legacy">
+                      <mat-label>Mobile Number</mat-label>
+                      <span matPrefix>+880 &nbsp;</span>
+                      <input
+                        type="tel"
+                        matInput
+                        formControlName="phoneMulti"
+                        placeholder="Phone number or landline"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="trams-condition">
+                  <mat-checkbox formControlName="smsMulti">send SMS to mobile number</mat-checkbox>
+                  <br/>
+                  <mat-checkbox formControlName="readMulti">I have read and understand the
+                    <span class="blue-span">Fare rules</span>
+                  </mat-checkbox>
+                  <mat-checkbox formControlName="termsMulti" required>I have read and agree to the
+                    <span class="blue-span">trams and conditions</span>
+                  </mat-checkbox>
+                </div>
+                <button
+                  class="submit-button"
+                  type="submit"
+                  mat-raised-button
+                  color="primary"
+                  [disabled]="isDisabled"
+                  routerLink="/booking-confirmation"
+                >
+                  Book and Hold
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-right">
+        <!-- <div class="account-status"> -->
+        <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description> Invoice Summary</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="coustomer-body">
+              <div class="coustomer-content">
+                <p class="coustomer-blue">Adult</p>
+                <p class="coustomer-blue">Fare</p>
+              </div>
+              <div class="coustomer-content">
+                <p>Base</p>
+                <p>2775</p>
+              </div>
+              <div class="coustomer-content">
+                <p>Taxes</p>
+                <p>2775</p>
+              </div>
+              <div class="coustomer-content">
+                <p>Other Charges</p>
+                <p></p>
+                <p>0346</p>
+              </div>
+              <div class="coustomer-content">
+                <p class="coustomer-blue">Count</p>
+                <p class="coustomer-blue">1</p>
+              </div>
+              <div class="coustomer-content">
+                <p>Total AIT & VAT</p>
+                <p></p>
+                <p>11</p>
+              </div>
+              <div class="coustomer-content">
+                <p class="coustomer-blue">Grand Total</p>
+                <p></p>
+                <p class="coustomer-blue">BDT 3178</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <!-- </div> -->
+        <!-- <div class="coustomer-summary"> -->
+        <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-description> Coustomer Summary</mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="coustomer-body">
+              <div class="coustomer-content">
+                <p>Total AIT & VAT</p>
+                <p>21</p>
+              </div>
+              <div class="coustomer-content">
+                <p class="coustomer-blue">Coustomer grand total</p>
+                <p class="coustomer-blue">BDT 6356</p>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <!-- </div> -->
+        <div class="apply-promo">
+          <h2>Apply Promo</h2>
+          <div class="apply-promo-form">
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Enter your promo code"/>
+            </mat-form-field>
+            <button class="apply-btn">Apply</button>
+          </div>
+        </div>
+        <!-- service charge -->
+        <div class="account-status">
+          <h3>Airtrips Service Charge</h3>
+          <div class="status">
+            <div class="status-header">
+              <p>Void</p>
+              <p>Reissue</p>
+              <p>Refund</p>
+            </div>
+            <div class="status-body">
+              <p>BDT</p>
+              <p>BDT</p>
+              <p>BDT</p>
+              <p>150</p>
+              <p>150</p>
+              <p>150</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader-area">
+  <app-loader [loader]="loader" [qureyData]="loaderAirData"></app-loader>
+</div>

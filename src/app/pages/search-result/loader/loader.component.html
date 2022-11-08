@@ -1,0 +1,186 @@
+<!---loader-area-->
+<div class="loader-area" *ngIf="loader">
+  <div class="loader-main">
+    <div class="loader-img">
+      <img src="./assets/images/image/ezgif.com-gif-maker(1).gif" alt="" />
+      <h3>Searching for the best Airtrips flights</h3>
+    </div>
+    <div class="loader-bottom">
+      <!-- One Waya -->
+      <div *ngIf="qureyData?.data?.JourneyType === 1">
+        <div *ngFor="let seg of qureyData?.data?.Segments" class="form-to">
+          <!-- {{ seg | json }} -->
+          <div class="form">
+            <h3>
+              {{ seg?.Origin ? seg?.Origin : "N/A" }}
+            </h3>
+          </div>
+          <div class="icon" *ngIf="seg?.Destination">
+            <span><i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="form">
+            <h3>
+              {{ seg?.Destination ? seg?.Destination : "N/A" }}
+            </h3>
+          </div>
+        </div>
+        <div class="date">
+          <ul>
+            <li *ngFor="let seg of qureyData?.data?.Segments">
+              <span>{{ seg?.DepartureDateTime |date:'dd/MM/yyyy'}}</span>
+            </li>
+          </ul>
+          <h3 *ngFor="let seg of qureyData?.data?.Segments">
+            {{
+              qureyData?.data?.AdultQuantity
+                ? qureyData?.data?.AdultQuantity + " Adult(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.ChildQuantity
+                ? qureyData?.data?.ChildQuantity + " Child(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.InfantQuantity
+                ? qureyData?.data?.InfantQuantity + " Infant(s)"
+                : ""
+            }}
+            |
+            {{ seg?.CabinClass === 1 ? "Economy" : ""
+            }}{{ seg?.CabinClass === 2 ? "Premium Economy" : ""
+            }}{{ seg?.CabinClass === 3 ? "Business" : ""
+            }}{{ seg?.CabinClass === 4 ? "First Class" : "" }}
+          </h3>
+        </div>
+      </div>
+
+      <!-- Round Trip -->
+      <div *ngIf="qureyData?.data?.JourneyType === 2">
+        <!-- {{ qureyData?.data | json }} -->
+        <div *ngFor="let seg of qureyData?.data?.Segments" class="form-to">
+          <div class="form">
+            <h3>
+              {{ seg?.Origin ? seg?.Origin : "N/A" }}
+            </h3>
+          </div>
+          <div class="icon" *ngIf="seg?.Destination">
+            <span><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+          </div>
+          <div class="form">
+            <h3>
+              {{ seg?.Destination ? seg?.Destination : "N/A" }}
+            </h3>
+          </div>
+        </div>
+        <div class="date">
+          <ul>
+            <li>
+              <span>{{ qureyData?.data?.Segments[0]?.DepartureDateTime |date:'dd/MM/yyyy' }}</span>
+            </li>
+            <li class="arrow">
+              <span><i class="fa fa-arrow-right"></i></span>
+            </li>
+            <li>
+              <span>{{
+                qureyData?.data?.Segments[0 + 1]?.DepartureDateTime | date:'dd/MM/yyyy'
+              }}</span>
+            </li>
+          </ul>
+          <h3>
+            {{
+              qureyData?.data?.AdultQuantity
+                ? qureyData?.data?.AdultQuantity + "Adult(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.ChildQuantity
+                ? qureyData?.data?.ChildQuantity + "Child(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.InfantQuantity
+                ? qureyData?.data?.InfantQuantity + "Infant(s)"
+                : ""
+            }}
+            |
+            {{ qureyData?.data?.Segments[0]?.CabinClass === 1 ? "Economy" : ""
+            }}{{
+              qureyData?.data?.Segments[0]?.CabinClass === 2
+                ? "Premium Economy"
+                : ""
+            }}{{
+              qureyData?.data?.Segments[0]?.CabinClass === 3 ? "Business" : ""
+            }}{{
+              qureyData?.data?.Segments[0]?.CabinClass === 4
+                ? "First Class"
+                : ""
+            }}
+          </h3>
+        </div>
+      </div>
+      <!-- One Waya -->
+      <div *ngIf="qureyData?.data?.JourneyType === 3">
+        <div *ngFor="let seg of qureyData?.data?.Segments">
+          <div>
+            <div class="form-to">
+              <!-- {{ seg | json }} -->
+              <div class="form">
+                <h3>
+                  {{ seg?.Origin ? seg?.Origin : "N/A" }}
+                </h3>
+              </div>
+              <div class="icon" *ngIf="seg?.Destination">
+                <span><i class="fa-solid fa-arrow-right-arrow-left"></i></span>
+              </div>
+              <div class="form">
+                <h3>
+                  {{ seg?.Destination ? seg?.Destination : "N/A" }}
+                </h3>
+              </div>
+            </div>
+            <div class="date">
+              <ul>
+                <li>
+                  <span>{{ seg?.DepartureDateTime |date:'dd/MM/yyyy' }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="date">
+          <h3>
+            {{
+              qureyData?.data?.AdultQuantity
+                ? qureyData?.data?.AdultQuantity + " Adult(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.ChildQuantity
+                ? qureyData?.data?.ChildQuantity + " Child(s)"
+                : ""
+            }}
+            {{
+              qureyData?.data?.InfantQuantity
+                ? qureyData?.data?.InfantQuantity + " Infant(s)"
+                : ""
+            }}
+            |
+            {{ qureyData?.data?.Segments[1]?.CabinClass === 1 ? "Economy" : ""
+            }}{{
+              qureyData?.data?.Segments[1]?.CabinClass === 2
+                ? "Premium Economy"
+                : ""
+            }}{{
+              qureyData?.data?.Segments[1]?.CabinClass === 3 ? "Business" : ""
+            }}{{
+              qureyData?.data?.Segments[1]?.CabinClass === 4
+                ? "First Class"
+                : ""
+            }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,439 @@
+<div class="section1-area">
+  <div class="container-fluid">
+    <div class="container">
+      <div class="booking">
+        <div class="icon">
+          <mat-icon>done</mat-icon>
+        </div>
+        <div class="top-text">
+          <div class="top-text-content">
+            <p class="thanks">Thank You. Your Booking Order is Confirmed Now</p>
+            <p class="small-text">
+              A confirmation email address has been send to your provided email
+              address
+            </p>
+          </div>
+          <div class="top_button">
+            <button
+              mat-raised-button
+              color="primary"
+              routerLink="/pay-payment">
+              Confirm Ticket
+            </button>
+           </div>
+        </div>
+
+        <div class="bottom-text">
+          <p>
+            Ticket price is determined on the date of sale and is not guaranteed
+            until ticketing. <br />
+            The limit may be changed. The actual time limit should be requested
+            in the call center. <br />
+            kindly issue/cancel the PNR before the booking is automatically
+            expired / cancel by the airlines to avoid airlines penalty/ADM
+          </p>
+        </div>
+      </div>
+      <div class="booking-confirmation">
+        <div class="booking-conf-header">
+          <div class="logo">
+            <mat-icon> flight</mat-icon>
+            <h4>Booking confirmation</h4>
+          </div>
+          <div class="id">
+            <h4>Ref No: BookingID</h4>
+          </div>
+        </div>
+        <div class="booking-conf-body">
+          <div class="booking-conf-body-left">
+            <ul class="key">
+              <li>Client</li>
+              <li>Associated staff</li>
+              <li>Status</li>
+            </ul>
+            <ul>
+              <li>: Global Explore pvt Ltd</li>
+              <li>: Bitul Al Amin</li>
+              <li>: BookingStatus </li>
+            </ul>
+          </div>
+          <div class="booking-conf-body-right">
+            <ul class="key">
+              <li>Booked By</li>
+              <li>Fare Type</li>
+              <li>Order Ticket by</li>
+            </ul>
+            <ul>
+              <li>: Global Explore pvt Ltd</li>
+              <li>: FareType </li>
+              <li>: Booked</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flight">
+        <div class="booking-conf-header-container">
+          <div class="booking-conf-header-2">
+            <div class="logo">
+              <mat-icon> flight</mat-icon>
+              <h4>Flight Itinerary</h4>
+            </div>
+            <div class="id">
+              <h4>
+                PNR: AirlinePNR /Source:IA-DACHI3887
+              </h4>
+            </div>
+          </div>
+          <button mat-button (click)="openDialog()">Fare Rules</button>
+        </div>
+        <div class="flight-hero">
+          <div class="top">
+            <small class="top-left">PRIVATE</small>
+            <div class="top-right">
+              <div class="mat-icon-fluid">
+                <mat-icon> attach_money</mat-icon>
+              </div>
+              <small>Refundable</small>
+            </div>
+          </div>
+          <div >
+            <!-- {{ data | json }} -->
+            <div >
+              <div class="departure">
+                <mat-icon> flight</mat-icon>
+                <span>Departure || Return</span>
+              </div>
+              <div class="ticket-container">
+                <!-- {{ seg | json }} -->
+                <div class="destination">
+                  <span>Dhaka </span>
+                  <mat-icon>arrow_right_alt</mat-icon>
+                  <span>Sylhet</span>
+                  <small>November 8, 2022</small>
+                </div>
+                <div class="ticket-body">
+                  <div class="biman-bd">
+                    <div class="biman-logo">
+                      <mat-icon>flight_takeoff</mat-icon>
+                    </div>
+                    <div class="text">
+                      <h5>US-Bangla Airlines</h5>
+                      <small> BS Y | 531</small>
+                    </div>
+                  </div>
+                  <div class="time-box">
+                    <h4>DAC <span>7:40:00 AM</span></h4>
+                    <p>Saturday, November 12, 2022</p>
+                    <p>Hazrat Shahjalal International Airport</p>
+                    <p>Terminal</p>
+                  </div>
+                  <div class="time-count">
+                    <p>0h 50m</p>
+
+                    <div class="flight-dot">
+                      <mat-icon> flight</mat-icon>
+                      <span class="underline">
+                        <hr />
+                      </span>
+                      <div class="dot">
+                        <!-- <span>{{ convertSteps(data) }}</span> -->
+                        <span>.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="time-box">
+                    <h4>DAC <span>7:40:00 AM</span></h4>
+                    <p>Saturday, November 12, 2022</p>
+                    <p>Hazrat Shahjalal International Airport</p>
+                    <p>Terminal</p>
+                  </div>
+                  <div class="g">
+                    <mat-icon>event_seat</mat-icon>
+                    <small>S</small>
+                  </div>
+                  <div class="status">
+                    <div class="status-icon">
+                      <mat-icon> live_help</mat-icon>
+                      <small>AYQQWE</small>
+                    </div>
+                    <small
+                      >Status: BS</small
+                    >
+                  </div>
+                </div>
+                <div class="adult">
+                  <p>Adult-</p>
+                  <div class="bag-icon">
+                    <mat-icon>business_center</mat-icon>
+                    <p>
+                      Check in:
+                      <small>20kg</small>
+                    </p>
+                  </div>
+                  <div class="bag-icon">
+                    <mat-icon>business_center</mat-icon>
+                    <p>
+                      Cabin-<small> 7kg</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="hr-line"></div>
+            </div>
+          </div>
+
+          <div class="tabs-container">
+            <mat-tab-group animationDuration="0ms">
+              <mat-tab label="Cancellation">
+                <div class="first-container">
+                  <div class="first-container-row">
+                    <div>
+                      <p>Time frame</p>
+                      <small>(from Scheduled flight departure)</small>
+                    </div>
+                    <div>
+                      <p>Airline Fee + Airtrips Fee</p>
+                      <small>(per passenger)</small>
+                    </div>
+                  </div>
+
+                  <div class="dashed"></div>
+                  <div class="first-container-row">
+                    <p>0 hours to 72 hours*</p>
+                    <p><small>Adult: </small><span> 2000.00+150</span></p>
+                  </div>
+                  <div class="dashed"></div>
+                  <div class="first-container-row">
+                    <p>72 hours to 365 days*</p>
+                    <p><small>Adult: </small><span> 1500.00+150</span></p>
+                  </div>
+                  <div class="first-container-row">
+                    <div>
+                      <p>Time frame</p>
+                      <small>(after flight departure)</small>
+                    </div>
+
+                    <div>
+                      <p>Airline Fee + Airtrips Fee</p>
+                      <small>(per passenger)</small>
+                    </div>
+                  </div>
+                  <div class="dotted"></div>
+                  <div class="first-container-row">
+                    <small>(after flight departure)</small>
+                    <p><small>Adult: </small><span> 2000.00+150</span></p>
+                  </div>
+                </div>
+              </mat-tab>
+              <mat-tab label="Date Change">
+                <div class="first-container">
+                  <div class="first-container-row">
+                    <div>
+                      <p>Time frame</p>
+                      <small>(from Scheduled flight departure)</small>
+                    </div>
+                    <div>
+                      <p>Airline Fee + Airtrips Fee</p>
+                      <small>(per passenger)</small>
+                    </div>
+                  </div>
+
+                  <div class="dashed"></div>
+                  <div class="first-container-row">
+                    <p>0 hours to 72 hours*</p>
+                    <p><small>Adult: </small><span> 2000.00+150</span></p>
+                  </div>
+                  <div class="dashed"></div>
+                  <div class="first-container-row">
+                    <p>72 hours to 365 days*</p>
+                    <p><small>Adult: </small><span> 1500.00+150</span></p>
+                  </div>
+                  <div class="first-container-row">
+                    <div>
+                      <p>Time frame</p>
+                      <small>(after flight departure)</small>
+                    </div>
+
+                    <div>
+                      <p>Airline Fee + Airtrips Fee</p>
+                      <small>(per passenger)</small>
+                    </div>
+                  </div>
+                  <div class="dotted"></div>
+                  <div class="first-container-row">
+                    <small>(after flight departure)</small>
+                    <p><small>Adult: </small><span> 2000.00+150</span></p>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+          <div class="warning">
+            <mat-icon>report_problem</mat-icon>
+            <p>
+              Important: The airline is inductive. Airtrips does not gurantee the
+              accuracy of this information . All fees mentioned are not
+              passenger
+            </p>
+          </div>
+        </div>
+      </div>
+      <section class="fare_information">
+        <div class="fare_info_title">
+          <mat-icon>description</mat-icon><span>Fare Information</span>
+        </div>
+        <div class="fare_info_box">
+          <div class="info_table">
+            <div class="table-head">
+              <ul>
+                <li>Passenger</li>
+                <li>Base</li>
+                <li>Taxes</li>
+                <li>Other</li>
+                <li>Service Fee</li>
+                <li>Count</li>
+                <li>Sub Total</li>
+              </ul>
+            </div>
+            <!--  -->
+            <!--  -->
+            <div class="table-data" >
+              <ul >
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div class="total_amount">
+            <p class="savings">Your Savings:<b>(-)BDT </b></p>
+
+            <!-- <p class="vat">Total AIT & VAT:<b>BDT 21</b></p> -->
+            <p class="total_invoice">Invoice Total:<b>BDT 1000</b></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pessanger_info">
+        <div class="pessanger_info_title">
+          <mat-icon>person</mat-icon><span>Pessanger Information</span>
+        </div>
+        <div class="pessanger_info_box">
+          <p>Passenger 1</p>
+          <div class="pessanger_info_table">
+            <div class="table-head-1">
+              <ul>
+                <li>Title</li>
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Type</li>
+                <li>Gender</li>
+                <li>Date of Birth</li>
+                <li>Email</li>
+                <li>Phone</li>
+              </ul>
+            </div>
+            <div class="table-data-1">
+              <ul>
+                <li></li>
+                <br/>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container-left">
+      <!-- <div class="account-status"> -->
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-description> Invoice Summary </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="status">
+            <div class="status-header">
+              <p>Utilized</p>
+              <p>Balanced</p>
+              <p>Available</p>
+            </div>
+            <div class="status-body">
+              <p>0.00%</p>
+              <p>694.60</p>
+              <p>100.0%</p>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <!-- </div> -->
+      <div class="balance">
+        <p>Insufficient ballance to order a ticket.</p>
+      </div>
+      <div class="reprice">
+        <mat-icon>confirmation_number</mat-icon>
+        <p>Reprice</p>
+      </div>
+      <!-- <div class="print"> -->
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <mat-icon>print</mat-icon>
+              <p>print/download</p>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>print confirmation with price</p>
+          <p>print confirmation without price</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <!-- </div> -->
+      <div class="reprice">
+        <mat-icon>confirmation_number</mat-icon>
+        <p>SSR History</p>
+      </div>
+      <!-- service charge -->
+      <div class="account-status">
+        <h3> Airtrips Service Charge</h3>
+        <div class="status">
+          <div class="status-header">
+            <p>Utilized</p>
+            <p>Balanced</p>
+            <p>Available</p>
+          </div>
+          <div class="status-body">
+            <p>0.00%</p>
+            <p>694.60</p>
+            <p>100.0%</p>
+          </div>
+        </div>
+      </div>
+      <!-- voiding rules -->
+      <div class="voiding">
+        <p class="voiding-top">Voioding Rules</p>
+        <p class="voiding-bottom">
+          For voidable Tickets,Submit request for Void before 23:30(Bangladesh
+          time)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- TEMPLATE NGX SPINNER-->
+<!-- <ngx-spinner
+  style="width: 100vw; height: 100vh"
+  bdColor="rgba(0,0,0,0.8)"
+  size="large"
+  color="#fff"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner> -->
+<div class="loader-area">
+  <app-loader [loader]="loader" [qureyData]="loaderAirData"></app-loader>
+</div>

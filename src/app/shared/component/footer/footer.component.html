@@ -1,0 +1,267 @@
+<!---footer-email--->
+<div class="footer-email">
+    <div class="container">
+        <div class="footer-email-main">
+            <!---foooter-email-left-->
+            <div class="footer-email-left">
+                <!--footer-email-icon-->
+                <div class="footer-email-icon">
+                    <img src="./assets/images/svg/ico_email_subscribe.svg" alt="">
+                </div>
+                <!---footer-email-text-->
+                <div class="footer-email-text">
+                    <h3>title</h3>
+                    <h5>subtitle </h5>
+                </div>
+            </div>
+            <!--footer-email-right-->
+            <div class="footer-email-right">
+                <div class="input">
+                    <input type="text" name="userEmail" id="userEmail"placeholder="Enter your email...">
+                </div>
+                <!---email-sub-->
+                <div class="email-sub">
+                    <button >Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----foooter-area-->
+<footer class="footer-area">
+    <div class="container">
+        <!---footer-main-->
+        <div class="foooter-main">
+            <!---foooter-logo-info-->
+            <div class="footer-link">
+              <!---footer-title-->
+              <div class="footer-title">
+                  <h3>Support</h3>
+              </div>
+              <!---footer-link-info-->
+              <div class="footer-link-info">
+                  <ul>
+                    <li><a routerLink="/pages/about-us" target="_blank">About Us</a></li>
+                    <!-- <li><a routerLink="/contact" target="_blank">Contact</a></li> -->
+                    <li><a routerLink="/faq" target="_blank">Frequently asked questions</a></li>
+                    <li><a routerLink="/pages/privacy-policy" target="_blank">Privacy Policy </a></li>
+                    <li><a routerLink="/pages/terms-and-conditions" target="_blank">Terms and Conditions</a></li>
+                    <li><a routerLink="/pages/return-&-refund-policy" target="_blank">Refund Policy</a></li>
+                  </ul>
+              </div>
+            </div>
+            <!--footer-help-->
+            <div class="footer-contact">
+                <!---footer-title-->
+                <div class="footer-title">
+                    <h3>Need Help?</h3>
+                </div>
+                <!---footer-contact-main-->
+                <div class="footer-contact-main">
+                    <!---footer-contact-info-->
+                    <div class="footer-contact-info">
+                        <span>Call Us</span>
+                        <!-- {{footerData?.phoneNumbers | json}} -->
+                        <h3  >phoneNo</h3>
+                    </div>
+                    <!---footer-contact-info-->
+                    <div class="footer-contact-info">
+                        <span>Email Us</span>
+                        <h3  >email</h3>
+                    </div>
+                    <!---footer-contact-info-->
+                    <div class="footer-contact-info">
+                        <span>Address</span>
+                        <h3 >address</h3>
+                    </div>
+                </div>
+            </div><!--footer-help-end-->
+            <!----foooter-link-->
+            <div class="footer-link">
+                <!---footer-title-->
+                <div class="footer-title">
+                    <h3>More</h3>
+                </div>
+               <!---footer-link-info-->
+               <div class="footer-link-info">
+                   <ul>
+                       <li><a href="#">Airline fees</a></li>
+                       <li><a href="#">Airlines</a></li>
+                   </ul>
+               </div>
+            </div>
+            <!--footer-setting-->
+            <div class="footer-setting">
+                <!---footer-title-->
+                <div class="footer-title">
+                    <h3>Site / Currency</h3>
+                </div>
+              <div class="header-country-area">
+                <ul>
+                  <!-- (click)="currencyActive()" -->
+                  <!-- <i class="fa fa-angle-down"></i> -->
+                  <li >
+                    <span *ngIf="countryData !== null" >{{countryData?.currency?.code}} </span>
+                    <span *ngIf="countryData?.currency?.symbol"> ( {{countryData?.currency?.symbol}} ) </span>
+                    <span *ngIf="countryData == null" >BDT</span>
+                  </li>
+                  <li style="position: relative; top: 4px;" (click)="languageActive()">
+                    <div class="country_content">
+                      <img *ngIf="countryData !== null" [src]="countryData ? countryData.flag : 'src/assets/images/image/flag-800.png'" alt="">
+                      <img *ngIf="countryData == null" src="/assets/images/image/flag-800.png" alt="">
+                      <p *ngIf="countryData !== null">{{countryData.name}}</p>
+                      <p *ngIf="countryData == null">Bangladesh</p>
+                      <i class="fa fa-angle-down" style="position: relative; top: -1px;"></i>
+                    </div>
+                  </li>
+                </ul>
+                <!---language-->
+                <div class="language-2" [ngClass]="{'language-active': language == true}">
+                  <!--language-title-->
+                  <div class="language-title">
+                    <h3>Select your Countries</h3>
+                    <span class="cross" (click)="languageInactive()">	<mat-icon>clear</mat-icon></span>
+                  </div>
+                  <!---suggest-lang-->
+                  <div class="suggest-lang">
+                    <!-- <h4>Suggest for you</h4>
+                        <ul>
+                        <li *ngFor="let data of countries; let i = index" (click)="onSelectedCountry(data, event)">
+                            <a href="#" [ngClass]="selectCountry[i] ? 'selected_country lang-check' : 'normalCountry'" >
+
+                                <div class="lang-flag" >
+                                    <img [src]="data.flag" [alt]="data.name"> <span>{{data?.name}}</span>
+                                </div>
+                                <div class="lang-check">
+                                    <i class="fa fa-check "></i>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul> -->
+                  </div>
+                  <!---suggest-lang-->
+                  <div class="all-lang">
+                    <h4>All Countries</h4>
+                    <ul>
+                      <li *ngFor="let data of countries; let i = index" (click)="onSelectedCountry(data, event)">
+                        <a href="#" [ngClass]="selectCountry[i] ? 'selected_country lang-check' : 'normalCountry'" >
+
+                          <div class="lang-flag" >
+                            <img [src]="data.flag" [alt]="data.name"> <span>{{data?.name}}</span>
+                          </div>
+                          <!--lang-check-->
+                          <div class="lang-check">
+                            <i class="fa fa-check "></i>
+                          </div>
+                        </a>
+                      </li>
+
+                    </ul>
+                  </div>
+                </div><!---language-end-->
+                <!---currency-->
+                <!-- <div class="currency" [ngClass]="{'currency-active': currency == true}">
+
+                   <div class="currency-title">
+                       <h3>Select your currency</h3>
+                       <span class="cross" (click)="currencyInactive()">X</span>
+                   </div>
+                   <div class="suggest-currency">
+                   <h4>Suggest for you</h4>
+                       <ul>
+                       <li *ngFor="let data of [1,2,3,4,5,6]">
+                           <a href="#">
+                               <div class="currency-text">
+                                  <span>U.S Dollar <br> USD </span>
+                               </div>
+                               <div class="currency-check">
+                                   <i class="fa fa-check"></i>
+                               </div>
+                           </a>
+                       </li>
+
+                   </ul>
+                   </div>
+                   <div class="all-currency">
+                           <h4>All currency</h4>
+                               <ul>
+                               <li *ngFor="let data of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+                                   <a href="#">
+                                       <div class="currency-text">
+                                          <span>U.S Dollar <br> USD </span>
+                                       </div>
+                                       <div class="currency-check">
+                                           <i class="fa fa-check"></i>
+                                       </div>
+                                   </a>
+                               </li>
+
+                       </ul>
+                   </div>
+               </div> -->
+
+              </div>
+                <!---footer-currency-->
+                <!-- <div class="footer-currency">
+                    <h3>Currencies</h3>
+                    <button>BDT <i class="fa fa-angle-down"></i></button>
+                </div> -->
+                <!--footer-social-->
+                <!-- <div class="footer-social">
+                    <span>Follow Us</span>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div> -->
+                <!---footer-payment-->
+                <!-- <div class="footer-pay">
+                    <img src="./assets/images/payment/ssl-commerce.1d268dce.png" alt="">
+                </div> -->
+            </div>
+        </div>
+
+        <!--ntt-->
+        <div class="footer_privacy_section">
+          <div class="privacy_content">
+            <p>Privacy</p>
+            <p>Terms & Conditions</p>
+            <p>Ad Choices</p>
+            <p>@2022 Airtrips</p>
+          </div>
+          <div class="footer-social">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <p>AirTrips part of Booking Holdings Inc., the world leader in online travel & related services.</p>
+
+          <div class="privacy_content">
+            <div class="footer_image">
+              <img src="/assets/images/logo/Accesrail_airlines_logo.png" alt="">
+            </div>
+            <div class="footer_image">
+              <img src="/assets/images/logo/aer_lingus_logo.png" alt="">
+            </div>
+            <div class="footer_image">
+              <img src="/assets/images/logo/Air-France-Logo.png" alt="">
+            </div>
+            <div class="footer_image">
+              <img src="/assets/images/logo/AirTrips final 05.png" alt="">
+            </div>
+            <div class="footer_image">
+              <img src="/assets/images/logo/american-airlines.png" alt="">
+            </div>
+          </div>
+        </div>
+    </div>
+</footer>
+<!-- -comming-animation
+<div class="comming-animation">
+    <marquee behavior="smooth" direction="left">Assalamu Alaikum We Are Comming...</marquee>
+</div> -->

@@ -1,0 +1,51 @@
+
+
+<div class="top">
+  <p>We have sent a 6 digit OTP to your mobile number. Enter the OTP we will automatically verify this. </p>
+</div>
+
+<form >
+  <div class="code-area">
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code1"
+             >
+    </mat-form-field>
+
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code2"
+              formControlName="code2" maxlength="1">
+    </mat-form-field>
+
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code3"
+             formControlName="code3" maxlength="1">
+    </mat-form-field>
+
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code4"
+             formControlName="code4" maxlength="1">
+    </mat-form-field>
+
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code5"
+            formControlName="code5" maxlength="1">
+    </mat-form-field>
+
+    <mat-form-field class="verify-input-field" appearance="outline">
+      <input matInput type="text" id="code6"
+             formControlName="code6" maxlength="1">
+    </mat-form-field>
+  </div>
+
+  <!--****** verification-timing-area *******-->
+  <div class="verification-timing-area" >
+    <h3><span><i class="fa fa-clock"></i></span>countDown  seconds</h3>
+  </div>
+
+
+  <div class="action">
+    <button type="button" fxHide   mat-raised-button color="accent" >Resent</button>
+  </div>
+
+</form>
+

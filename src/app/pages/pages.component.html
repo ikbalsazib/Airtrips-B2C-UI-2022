@@ -1,0 +1,184 @@
+<div class="all-pages-render-area" [class]="menu?'i':'padding-69'">
+    <!---side-nav-area-->
+    <div class="side-nav" [class]="menu?'i':'side-nav-69'">
+        <!--side-bar-->
+        <div class="side-bar">
+            <span (mouseover)="menuActive()" (mouseleave)="menuInactive()" [class]="menu?'inactive':'menubar-active'"><i class="fa fa-bars"></i></span>
+        </div>
+        <div (mouseover)="menuActive()" (mouseleave)="menuInactive()" [class]="menu?'inactive':'menubar-active'" >
+  <!--side-bar-menu-->
+  <div class="side-bar-menu">
+    <ul>
+        <li>
+            <a href="#" class="active-menu">
+                <span class="menu-icon"><i class="fa fa-home"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="menu-icon"><i class="fa fa-plane-departure"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Flights</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="menu-icon"><i class="fa fa-hotel"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Hotel</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="russia-tour">
+                <span class="menu-icon"><i class="fa fa-home"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Russia Tour</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="menu-icon"><i class="fa fa-address-book"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Contact</span>
+            </a>
+        </li>
+        <!-- <li>
+            <a target="_blank" href="">
+                <span class="menu-icon"><i class="fa-solid fa-calculator"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Zakat Calculator</span>
+            </a>
+        </li> -->
+        <li>
+            <a routerLink="visa-support">
+                <span class="menu-icon"><i class="fa-solid fa-circle-question"></i></span>
+                <span class="menu-text" *ngIf="menu == true">Visa Support</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-----------time-area-------->
+<div class="time-area-main" [class]="menu?'show':'hide'">
+    <!---live-clock-->
+<div class="live-clock">
+    <!---clock-->
+    <div class="clock">
+       <div class="time-area">
+        <!--time-->
+        <div class="time">
+            <h3>{{hour}}</h3>
+        </div>
+        <!--separte-->
+        <div class="separte">
+            <span>:</span>
+        </div>
+          <!--time-->
+        <div class="time">
+            <h3>{{min}}</h3>
+        </div>
+        <!--separte-->
+        <div class="separte">
+            <span>:</span>
+        </div>
+         <!--time-->
+         <div class="time">
+            <h3>{{sec}}</h3>
+        </div>
+       </div>
+       <!--time-format-->
+       <div class="time-format">
+           <span>{{timeFormat}}</span>
+       </div>
+    </div>
+</div><!---live-clock-end-->
+<!---prayer-time-->
+<div class="prayer-time-area">
+    <!---prayer-time-top-->
+    <!-- <div class="prayer-time-top">
+        <div class="prayer-time-top-left">
+            <div>
+                <img src="./assets/images/logo/AirTrips Very Newddddddddddddddd.png" alt="">
+            </div>
+            <div>
+                <span>Airtrips Prayer Time</span>
+            </div>
+        </div>
+        <div class="prayer-time-top-right">
+            <h3><i class="fa fa-map-marker-alt"></i>Dhaka</h3>
+        </div>
+    </div>
+    <div class="prayer-info">
+        <h3><span>Fajr</span> at <span>04:29 </span> AM</h3>
+        <h3><span>Dhuhr</span> at <span>12:54 </span> PM</h3>
+        <h3><span>Asr</span> at <span>04:41 </span> PM</h3>
+        <h3><span>Maghrib</span> at <span>06:35 </span> PM</h3>
+        <h3><span>Isha</span> at <span>08:30 </span> PM</h3>
+    </div> -->
+
+
+    <mat-accordion>
+
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           <!---prayer-time-top-->
+            <div class="prayer-time-top">
+              <!---prayer-time-top-left-->
+              <div class="prayer-time-top-left">
+                  <div>
+                      <img src="./assets/images/logo/AirTrips Very Newddddddddddddddd.png" alt="">
+                  </div>
+                  <div>
+                      <span>Airtrips Prayer Time</span>
+                  </div>
+              </div>
+
+          </div><!---prayer-time-top-end-->
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="prayer-info">
+          <!---prayer-time-top-right-->
+          <div class="prayer-time-top-right">
+            <h3><i class="fa fa-map-marker-alt"></i>Dhaka</h3>
+          </div>
+          <h3><span>Fajr</span> at <span>04:29 </span> AM</h3>
+          <h3><span>Dhuhr</span> at <span>12:54 </span> PM</h3>
+          <h3><span>Asr</span> at <span>04:41 </span> PM</h3>
+          <h3><span>Maghrib</span> at <span>06:35 </span> PM</h3>
+          <h3><span>Isha</span> at <span>08:30 </span> PM</h3>
+      </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+</div>
+
+
+
+</div><!-----------time-area---end------->
+
+        </div>
+      
+
+
+
+
+    </div><!---side-nav-area-end-->
+
+    <div class="page-render-right">
+        <!---header-area-->
+        <div class="header">
+            <div>
+                <app-header class="header-fixed"></app-header>
+            </div>
+        </div>
+        <!---all-pages-render-->
+        <div class="all-pages-render">
+            <router-outlet></router-outlet>
+        </div>
+        <!---footer-area-->
+        <div class="footer-area">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
+
+<!----comming-soon-->
+<!-- <app-comming-soon></app-comming-soon> -->

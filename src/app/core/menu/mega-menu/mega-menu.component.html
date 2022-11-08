@@ -1,0 +1,51 @@
+<div class="mega-menu">
+  <div class="container">
+
+    <div class="cat-list-viewer" [matMenuTriggerFor]="belowMenu" [ngClass]="{ 'disabled-trigger' : router.url === '/' }">
+      <mat-icon>menu</mat-icon>
+      <a>Categories</a>
+      <!--      <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>-->
+      <mat-menu #belowMenu="matMenu" yPosition="below" class="cat-dropdown">
+        <div mat-menu-item class="cat-dropdown-item">
+          <a href="">Langra Mango</a>
+          <mat-icon>arrow_right</mat-icon>
+        </div>
+        <div mat-menu-item class="cat-dropdown-item">
+          <a href="">Langra Mango</a>
+          <mat-icon>arrow_right</mat-icon>
+        </div>
+      </mat-menu>
+    </div>
+
+    <ul class="menu-ul">
+      <li><a routerLink="/">Home</a></li>
+      <li><a href="">All Fruits</a></li>
+      <li><a href="">Organic Fruits</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Offers</a></li>
+    </ul>
+
+    <div class="language-viewer">
+      <button mat-button [matMenuTriggerFor]="menu">
+        Language (EN)
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="dropdown-view">
+        <div mat-menu-item class="menu-item">
+          <div class="select"></div>
+          <img src="/assets/images/flag/bangladesh-flag.png" alt="">
+          <span>Bangla</span>
+        </div>
+        <div mat-menu-item class="menu-item">
+          <div class="select">
+            <mat-icon>check</mat-icon>
+          </div>
+          <img src="/assets/images/flag/united-states-flag.png" alt="">
+          <span>English</span>
+        </div>
+      </mat-menu>
+    </div>
+
+
+  </div>
+</div>

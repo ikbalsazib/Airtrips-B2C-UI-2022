@@ -1,0 +1,218 @@
+@import "../../../../theme/varriable";
+@import "../../../../theme/others-login";
+
+
+/*start-coding*/
+.login-area {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  //background-color: #fff;
+  padding-top: 50px;
+  margin-bottom: 10vh;
+}
+
+form .invalid {
+  position: static;
+  color: #d51a32;
+  font-family: $font-en;
+  padding: 8px 2px;
+}
+
+.login-details-start {
+  display: block;
+  width: 85%;
+  margin: auto;
+}
+
+.login-title {
+  margin-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.login-title-left {
+  float: left;
+  width: 60%;
+}
+
+.login-title-left h2 {
+  font-weight: 500;
+  font-size: 24px;
+  display: block;
+  color: #fff;
+  font-family: $font-en;
+  font-style: normal;
+  line-height: 22px;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.login-title-right {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+
+.login-title-right h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  font-family: $font-en;
+  display: block;
+  line-height: 20px;
+}
+
+.login-title-right h3 a {
+  color: #00A1D7;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  font-family: $font-en;
+}
+
+.login-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  padding: 45px 24px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+
+}
+
+.login-form {
+  display: block;
+  width: 95%;
+}
+
+.login-form form {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.w-100{
+  width: 100%;
+}
+.login-field {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+
+.login-btn {
+  text-align: center;
+}
+
+.login-btn button {
+  max-width: 140px;
+  width: 100%;
+  color: #21033A;
+  font-weight: 400;
+  font-family: $font-en;
+  background-color: #fff;
+  text-align: center;
+  padding: 12px 5px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid #21033A;
+  text-transform: uppercase;
+  margin: auto;
+  font-style: normal;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s all linear;
+
+  &:hover {
+    background-color: #00A1D7;
+    border-color: #00A1D7;
+    color: #fff;
+  }
+}
+
+.forgot {
+  margin-top: -30px;
+  text-align: end;
+  margin-bottom: 8px;
+}
+.forgot a{
+  color: #fff;
+}
+.w-100 mat-label{
+  color: #ffff;
+}
+.w-100 mat-icon{
+  color: #fff;
+}
+.w-100 input{
+  color: #fff;
+}
+::placeholder{
+  color: #777;
+}
+::ng-deep.w-100.mat-form-field-appearance-outline .mat-form-field-outline-thick{
+  color: #fff;
+}
+::ng-deep.w-100.mat-form-field-appearance-outline .mat-form-field-outline{
+  color: #fff;
+}
+
+::ng-deep.w-100.mat-form-field-appearance-outline .mat-form-field-outline-thick{
+  color: #fff;
+}
+::ng-deep.w-100.mat-form-field-appearance-outline .mat-form-field-outline{
+  color: #fff;
+}
+@media(max-width: 998px) {
+  .login-details {
+    width: 100%;
+  }
+
+}
+
+@media(max-width: 925px) {
+  .login-details-start {
+    width: 95%;
+  }
+}
+
+@media(max-width: 850px) {
+  .login-form {
+    margin-bottom: 30px;
+    width: 90%;
+  }
+  .login-details {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 30vh;
+  }
+  .other-login ul li {
+    margin-right: 10px;
+  }
+}
+
+@media(max-width: 450px) {
+  .login-title-left {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .login-title-right {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .login-form {
+    width: 100%;
+  }
+  .login-area {
+    margin-bottom: 0;
+  }
+  .login-details {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 20vh;
+  }
+}

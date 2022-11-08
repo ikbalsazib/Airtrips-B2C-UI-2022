@@ -1,0 +1,316 @@
+.all-pages-render-area{
+    display: block;
+    background-color: #21033A;
+    padding-left: 250px;
+    transition: all 0.2s linear;
+}
+.padding-69{
+    padding-left: 69px!important;
+
+}
+/*** side nav***/
+.side-nav{
+    display: block;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+
+    top: 0px;
+    left: 0px;
+    background-color: #21033A;
+    border-right: 1px solid rgba(167,98,234,0.4);
+    z-index: 100;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+
+}
+.side-nav::-webkit-scrollbar{
+display: none;
+width: 0px;
+}
+.side-nav-69{
+    width: 69px;
+}
+.side-bar{
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.side-bar span{
+    padding: 6px 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: normal;
+    display: inline-block;
+    color: #9684a4;
+    transition: all 0.3s linear;
+}
+.side-bar span:hover{
+    background-color: #e1d9e8;
+    color: #150127;
+}
+.side-bar .menubar-active{
+    background-color: #e1d9e8;
+    color: #150127;
+}
+.side-bar-menu{
+    display: block;
+}
+.side-bar-menu ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.side-bar-menu ul li{
+    display: block;
+    margin-bottom: 15px;
+}
+.side-bar-menu ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+}
+.side-bar-menu ul li a:hover{
+    background-color: #e1d9e8;
+    color: #150127;
+    border-color: transparent;
+}
+.side-bar-menu ul li .active-menu{
+    background-color: #e1d9e8;
+    color: #150127;
+    border-color: transparent;
+}
+.menu-icon i{
+    font-size: 16px;
+    color: #9684a4;
+}
+.side-bar-menu ul li a:hover .menu-icon i{
+    color: #150127;
+}
+.side-bar-menu ul li .active-menu .menu-icon i{
+    color: #150127;
+}
+
+
+/**** time area main ****/
+
+.hide{
+    height: 0px;
+    width:0px;
+    overflow: hidden;
+    opacity: 0;
+}
+.show{
+    height: auto;
+    width: auto;
+    opacity: 1;
+    transition: all 0.2s linear;
+    transition-delay: 0.5s;
+}
+
+/**** clock *****/
+.live-clock{
+    display: block;
+    width: 100%;
+}
+.clock{
+    border: 1px solid rgba(167, 98, 234, 0.4);
+    padding: 5px 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+.time-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.time{
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.separte{
+    display: block;
+    width: 10px;
+    text-align: center;
+}
+.time h3{
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    margin: 0px;
+}
+.separte span{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+}
+.time-format{
+    display: block;
+    width: 30px;
+    height: 35px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+}
+.time-format span{
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Poppins',sans-serif;
+    color: #fff;
+    position: relative;
+    bottom: 5px;
+}
+
+/**** live clock end ****/
+
+/**** prayer-time-area ******/
+.prayer-time-area{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.prayer-time-top{
+    text-align: center;
+    display: block;
+}
+.prayer-time-top-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.prayer-time-top-left img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+::ng-deep.prayer-time-area .mat-expansion-panel-header {
+  padding: 0 10px!important;
+}
+::ng-deep.prayer-time-area .mat-expansion-panel {
+  background: #21033A;
+}
+::ng-deep.prayer-time-area .mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+::ng-deep.prayer-time-area .mat-expansion-indicator::after {
+  color: #fff;
+}
+::ng-deep.prayer-time-area .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+  background: #21033A;
+}
+
+.prayer-time-top-left span{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    display: block;
+    color: rgb(255, 255, 255);
+}
+.prayer-time-top-right{
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+.prayer-time-top-right h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+
+    i{
+      padding-right: 10px;
+    }
+}
+.prayer-info{
+    display: block;
+    text-align: left;
+}
+.prayer-info h3{
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins',sans-serif;
+    font-style: normal;
+    display: block;
+    font-weight: 300;
+    font-size: 13px;
+}
+.prayer-info h3 span{
+    font-weight: 600;
+    font-size: 14px;
+}
+/**** time area main end ****/
+
+
+
+
+
+
+.page-render-right{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+.header{
+    position: relative;
+    width: 99.9%;
+    margin-left: auto;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+.all-pages-render{
+    display: block;
+    // padding: 0px 15px;
+    box-sizing: border-box;
+}
+@media(max-width:1000px){
+    .all-pages-render-area{
+        padding: 0px;
+    }
+    .padding-69{
+        padding-left: 0px!important;
+
+    }
+    .side-nav-69{
+        width:0px;
+    }
+    .side-nav{
+        display: none;
+    }
+}

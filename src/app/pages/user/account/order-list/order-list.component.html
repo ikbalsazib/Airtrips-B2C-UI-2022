@@ -1,0 +1,183 @@
+<!---********* deshboard-area *********-->
+<section class="deshboard-area">
+  <div class="container">
+    <!--************* deshboard-row *********-->
+    <div class="deshboard-row">
+
+      <div class="deshboard-col-8">
+        <!--******** booking-area **************-->
+        <div class="booking-area">
+
+          <!--******* booking-top-area  ***-->
+          <div class="booking-top-area">
+            <div class="booking-tab">
+              <marquee behavior="smoth" direction="X">
+                <ul>
+                  <li>
+                    <button>Novair</button>
+                  </li>
+                  <li>
+                    <button>US-Bangla Airlines</button>
+                  </li>
+                  <li>
+                    <button>Turkish Airlines</button>
+                  </li>
+                  <li>
+                    <button>Biman Bangladesh</button>
+                  </li>
+                  <li>
+                    <button>Emirates</button>
+                  </li>
+                </ul>
+              </marquee>
+            </div>
+            <!--booking--search-area-->
+            <div class="booking-search-area">
+              <!--*****select-area **********-->
+              <div class="select-area">
+                <!-- <button class="clearfix" [matMenuTriggerFor]="menu">ALL TICKETS <span><i
+                  class="fa fa-angle-down"></i></span></button>
+                <mat-menu #menu="matMenu" class="coustomize">
+                  <div class="coustomize">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                  </div>
+                </mat-menu> -->
+
+              </div>
+              <!--booked-menu-->
+              <div class="booking-menu">
+
+                <ul>
+                  <li><span id="book"></span>Booked</li>
+                  <li><span id="paid"></span>Paid</li>
+                  <li><span id="cancel"></span>Canceled</li>
+                  <li><span id="expired"></span>Expired</li>
+                </ul>
+              </div>
+              <!---*********** search **********-->
+              <div class="search">
+                <form action="#">
+                  <div class="input">
+                    <input type="text" name="search" id="" placeholder="Enter Ticket No">
+                  </div>
+                  <div class="search-btn">
+                    <button type="button"><i class="fa fa-search"></i></button>
+                  </div>
+                </form>
+              </div>
+
+            </div><!--booking--search-area-end-->
+
+          </div> <!--******* booking-top-area-end  ***-->
+
+          <!---********* booking-midle-area ********-->
+          <div class="booking-midle-area">
+
+            <!---****** booking-details *****-->
+                 <!-- {{userOrder | json}} -->
+            <div class="booking-paid-details"
+                 *ngFor="let data of userOrder;let indexOfelement=index;">
+              <!---****** booking-details-top *****-->
+              <div class="booking-paid-details-top">
+                <div class="paid-top-left">
+                  <!-- <ul>
+                    <li><h3>{{data.departFrom}} to {{data.departTo}} ( <span>Depart</span> )</h3></li>
+                    <li><h3>{{data.returnCityFrom}} to {{data.returnCityTo}} ( <span>Return</span> )</h3></li>
+                    <li><span>Non AC</span></li>
+                  </ul> -->
+                </div>
+                <div class="paid-top-right">
+                  <ul>
+                    <!-- <li><span>{{data.launch?.name}}</span></li> -->
+                    <li><span>Payment Status: <strong> {{data.paymentStatus ? (data.paymentStatus | uppercase) : 'N/A'}}</strong></span></li>
+                  </ul>
+                </div>
+              </div> <!---****** booking-details-top-end *****-->
+
+              <!---********** paid-details ********-->
+              <div class="paid-details">
+                <ul>
+                  <li>
+                    <div class="booking-id">
+                      <span>TICKET NO</span>
+                      <h3>{{ airTicket[indexOfelement]}}</h3>
+                    </div>
+                  </li>
+                  <!-- <li>
+                    <div class="coutomer">
+                      <span>BOOKED BY</span>
+                      <h3>{{data && data.customerName ? data.customerName : 'User'}}</h3>
+                    </div>
+                  </li> -->
+                  <li>
+                    <div class="coutomer">
+                      <span>FROM</span>
+                      <h3>{{data?.origin }}</h3>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="fee">
+                      <span>TOTAL FARE</span>
+                      <h3>{{data?.totalAmount}}</h3>
+                      <!-- <h3>{{data?.totalAmount}}</h3> -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="date">
+                      <span>BOOKING DATE</span>
+                      <h3>{{data?.bookingDate | date }}</h3>
+                      <!-- <h3>{{data.createdAt | date: 'EEEE'}}</h3> -->
+                    </div>
+                  </li>
+                  <li>
+                    <div class="jurney-date">
+                      <span>JOURNEY DATE</span>
+                      <h3>{{data?.depDate | date}}</h3>
+                      <!-- <h3>{{data.returnDate | date: 'EEEE'}}</h3> -->
+                    </div>
+                  </li>
+                  <li>
+                    <button printTitle="Print Invoice" printSectionId="print-invoice-user" [useExistingCss]="true"
+                      ngxPrint mat-raised-button color="primary">
+                      <mat-icon>print</mat-icon>
+                    </button>
+                    <app-print-invoice id="print-invoice-user" [ticket]="data" style="display: none;">
+                    </app-print-invoice>
+                  </li>
+                </ul>
+
+              </div><!---********** paid-details-end ********-->
+            </div><!---****** booking-details-end *****-->
+
+
+          </div><!---********* booking-midle-area-end ********-->
+
+
+          <!--******* booking-bottom-area-  ***-->
+          <div class="booking-btm">
+            <!--****** pagination-area ***-->
+            <div class="pagination">
+              <!-- <pagination-controls
+                class="product-pagination"
+                [autoHide]="true"
+                [maxSize]="6"
+                (pageChange)="onPageChanged($event)">
+              </pagination-controls> -->
+            </div>
+          </div>
+          <!--******* booking-bottom-area-end  ***-->
+
+
+        </div> <!--******** booking-area-end **************-->
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOADING TEMPLATE -->
+<!-- <ngx-spinner style="width: 100vw; height: 100vh" bdColor="rgba(0,0,0,0.25)" size="medium" color="#fff"
+             type="ball-clip-rotate" [fullScreen]="true"><p style="color: white"> Loading... </p></ngx-spinner> -->

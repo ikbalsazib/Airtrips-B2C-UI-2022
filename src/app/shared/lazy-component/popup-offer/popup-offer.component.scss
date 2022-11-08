@@ -1,0 +1,97 @@
+@import'../../../../theme/varriable';
+
+.view {
+  background: #DBDBDB;
+  width: 95%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  position: fixed;
+  bottom: -1000px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  border-radius: 10px;
+  transition: 1s all linear;
+    color: black;
+
+  .txt {
+    width: 100%;
+
+    p {
+      font-family: $font-en-primary;
+      font-weight: 500;
+      color: #000;
+    }
+  }
+
+  .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+
+    button {
+      width: 160px;
+      background: #24273F;
+      color: #FFFFFF;
+      padding: 4px 0;
+
+      span {
+        font-family: $font-en-primary;
+        font-weight: 500;
+      }
+    }
+
+    a {
+      width: 160px;
+      background: #757575;
+      font-family: $font-en-primary;
+      font-weight: 500;
+      padding: 4px 0;
+      color: #0c0909;
+    }
+  }
+}
+.dialogclosebtn{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    font-size: 25px;
+
+}
+.dialogclosebtn button{
+  margin-left: 15px;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+}
+.show-cookie {
+  bottom: 8px;
+}
+.view-more-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom:0 ;
+  top: 80%;
+  /* left: 50%;
+  right: 50%;  */
+  height: 28px;
+
+}
+.view-more-btn button{
+  padding-left:20px;
+  padding-right: 20px;
+  background-color: rgb(88, 88, 243);
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}

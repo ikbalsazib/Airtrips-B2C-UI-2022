@@ -1,0 +1,106 @@
+@import'./varriable';
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+h1,h2,h3,h4,h5,h6,p{
+    display: block;
+    margin: 0px!important;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container{
+    display: block;
+    max-width: $container-max-width;
+    width: 98%;
+    margin: auto;
+}
+@media (max-width: 586px){
+  .container{
+    width: 96%;
+}
+}
+
+/**** main-code *****/
+.section-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 10px 15px 10px;
+    position: relative;
+}
+.section-title::after{
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: 110px;
+    border-radius: 2px;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    background-color: #fff;
+}
+.section-title h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.section-title span{
+    background-color: transparent;
+    color: #fff;
+    padding:2px 5px;
+    display: block;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: $font-en-primary;
+    font-weight: 600;
+    font-size: 23px;
+    border-radius: 2px;
+
+}
+@media(max-width:400px){
+    .section-title span{
+        font-size: 21px;
+    }
+}
+.w-100{
+    min-width: auto;
+    max-width:auto;
+    width:auto;
+}

@@ -1,0 +1,17 @@
+  <!---travel-card-->
+  <div class="travel-card"  [id]="data?._id"
+  [routerLink]="['/travel-details/',data?._id]">
+      <!--travel-img-->
+      <div class="travel-img">
+          <img [src]="data?.images" [alt]="data?.title">
+          <!--travel-tag-->
+          <div class="travel-tag">
+              <span>{{data?.status}}</span>
+          </div>
+      </div>
+      <!---travel-card-body-->
+      <div class="travel-card-body">
+          <h3>{{data?.recomamdedDestinationName}}</h3>
+          <p >{{data?.shortDescription}}</p>
+      </div>
+  </div><!---travel-card-end-->

@@ -1,0 +1,114 @@
+
+
+<div class="container">
+
+  <div class="top-view">
+    <div class="logo-thumb">
+      <img src="/assets/brand/logo-primary-white-2.png" alt="">
+    </div>
+    <div class="action">
+      <button mat-button class="icon-btn-big">
+        <mat-icon>help</mat-icon>
+        Help
+      </button>
+
+      <button mat-button class="icon-btn-big">
+        <mat-icon>account_circle</mat-icon>
+        Login
+      </button>
+    </div>
+  </div>
+
+  <mat-nav-list class="list-item-sidenav" [class.bn]="activeLang === 'bn'">
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'dashboard']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>home</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'ln.dashboard' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'sale']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>assignment_turned_in</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'Make Payment' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'purchase']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>library_add</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'Print Ticket' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'inventory']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>equalizer</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'SMS Ticket' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'reports', 'Cancel Ticket']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>eco</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'More' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" class="list-item"
+       [routerLink]="[baseLink, 'expense']"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>send</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'ln.expense' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" class="list-item"
+       [routerLink]="[baseLink, 'inventory-analysis']"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>speed</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'ln.inventoryAnalysis' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>payments</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'ln.softwarePayment' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+    <a (click)="sideLinkClick()" [routerLink]="[baseLink, 'settings']" class="list-item"
+       routerLinkActive="list-item-active"
+       mat-list-item>
+      <mat-icon>settings</mat-icon>
+      <span class="sidenav-link-title" [class.bn]="activeLang === 'bn'">{{'ln.settings' | translate}}</span>
+      <mat-icon class="icon-right">keyboard_arrow_right</mat-icon>
+    </a>
+
+
+  </mat-nav-list>
+
+  <div class="footer">
+<!--    <div class="button-group">-->
+<!--      <div [class.active]="activeLang === 'en'" class="btn" (click)="selectLang('en')"><img-->
+<!--        src="/assets/images/flag/united-states-flag.png" alt="">EN-->
+<!--      </div>-->
+<!--      <div [class.active]="activeLang === 'bn'" class="btn bn-default" (click)="selectLang('bn')"><img-->
+<!--        src="/assets/images/flag/bangladesh-flag.png" alt="">বাং-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="company-link">
+      <a  href="https://softlabit.com/" target="_blank">Copyright &copy; Jabo.com - 2021</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<!---all-travel-area-->
+<div class="all-travel-area">
+    <div class="container">
+        <div class="all-travel-main">
+            <div class="travel" *ngFor="let data of travelData | paginate: { itemsPerPage: productsPerPage, currentPage: currentPage, totalItems: totalProducts }; let i = index">
+                <app-travel-card  [data]="data"></app-travel-card>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pagination-container">
+    <pagination-controls
+      class="product-pagination"
+      [autoHide]="true"
+      [maxSize]="15"
+      (pageChange)="onPageChanged($event)">
+    </pagination-controls>
+  </div>     <!-- END PAGINATION -->

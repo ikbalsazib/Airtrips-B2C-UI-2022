@@ -1,0 +1,26 @@
+<!---section6-->
+<div class="section6">
+  <div class="container">
+    <!---section6-title-->
+    <div class="section6-title">
+      <h3>Visa Support</h3>
+      <!-- <p>The most searched for countries on airtrips</p> -->
+    </div>
+    <!---section6-main-->
+    <div class="section6-main">
+      <!---trending-card-->
+      <div class="trending-card" *ngFor="let data of [1,2,3,4,5,6,7]" [id]="data?._id"
+        [routerLink]="['visa-support-details', data?._id]">
+        <div class="trending-card-img">
+          <img src='/assets/images/image/039b6635-city-26939-16547ad1af4.jpg' [alt]="data?.trendingPlaceName" />
+        </div>
+        <div class="trending-card-text">
+          <!-- <span>Visa Support For</span> -->
+          <a>
+            ALABASTA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

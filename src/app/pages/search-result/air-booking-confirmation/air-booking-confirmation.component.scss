@@ -1,0 +1,118 @@
+@import "src/theme/varriable";
+@import "src/theme/table-one";
+
+.dialog-container {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 12px;
+
+  h1 {
+    font-family: $segoe_ui_bold;
+    font-size: 24px;
+    text-align: center;
+    color: #14b368;
+    padding-bottom: 2px;
+  }
+  .line {
+    width: 45%;
+    height: 2px;
+    background: #14b3686e;
+    margin: 0 auto;
+  }
+}
+
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .left, .right {
+    text-align: start;
+
+    h2 {
+      font-size: 18px;
+      color: #4f4f4f;
+      padding-bottom: 5px;
+    }
+    p{
+      font-size: 15px;
+      color: #353535;
+      line-height: 1.6;
+      font-family: $segoe_ui_regular;
+    }
+  }
+}
+
+.seat-info {
+  width: 80%;
+  margin: 12px auto;
+}
+
+.desc {
+  width: 60%;
+  text-align: center;
+  color: #666;
+  margin: 12px auto;
+  p {
+    color: #7b7b7b;
+    //font-style: italic;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.apply-coupon {
+  width: 100%;
+  max-width: 510px;
+  margin: 0 auto;
+
+  a {
+    width: 100%;
+    color: #32CD32;
+    font-family: $font-en-primary;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: #05af05;
+    }
+  }
+
+  .coupon-form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    .coupon-input {
+      width: 220px;
+    }
+    .coupon-action {
+      button {
+        margin-top: 10px;
+        padding: 0 30px;
+      }
+    }
+  }
+}
+
+.action {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  button {
+    width: 210px;
+    padding: 2px 0;
+    font-family: $segoe_ui_bold;
+  }
+}

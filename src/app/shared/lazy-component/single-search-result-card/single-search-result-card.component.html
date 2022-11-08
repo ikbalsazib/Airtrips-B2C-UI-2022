@@ -1,0 +1,447 @@
+<div class="details-area" >
+  <div class="details-head">
+    <h3 (click)="detailsToggle()">
+      Show More
+      <i [class]="details ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+    </h3>
+    <!-- <h3 [ngClass]="{ nonRefundable: data?.IsRefundable === false }">
+      <span class="dollerIcon"></span>
+      {{ data?.IsRefundable ? "Refundable" : "Non Refundable" }}
+    </h3> -->
+  </div>
+  <div class="details-main" *ngIf="details == true">
+    <!--flight-details-toggle-btn--->
+    <div class="details-toggle-btn">
+      <ul>
+        <li>
+          <button
+
+
+          >
+          <!-- (click)="flightDetailsShow()" -->
+          </button>
+        </li>
+        <li >
+          <button
+          (mouseover)=" fareSummaryShow()" (mouseleave)="fareSummaryShowHide()" [class]="fareSummary? 'active-btn' : 'inactive'"
+
+          >
+            Fare Summary
+          </button>
+        </li>
+        <li>
+          <button
+
+            (mousemove)="badggageShow()" (mouseleave)="badggageShowHide()"  [class]="badggage ? 'active-btn' : 'inactive'"
+          >
+            Baggage
+          </button>
+        </li>
+        <li>
+          <button
+          [class]="cancellation ? 'active-btn' : 'inactive'"
+            (mousemove)="cancellationShow()" (mouseleave)="cancellationShowHide()"
+          >
+            Cancellation
+          </button>
+        </li>
+        <li>
+          <button
+            [class]="dataChange ? 'active-btn' : 'inactive'"
+            (mousemove)="dataChangeShow()"(mouseleave)="dataChangeShowHide()"
+          >
+            Data Change
+          </button>
+        </li>
+        <li><button>Fare Rules</button></li>
+      </ul>
+    </div>
+    <!--details-body-->
+    <div class="details-body">
+      <!--flight-details-->
+      <div class="flight-details-main" >
+        <div class="details-toggle-btn">
+          <div class="ounBoundAndInBound">
+
+
+            <div class="outBound">
+              <h4 class="h4"> OUT BOUND</h4>
+
+  <mat-tab-group animationDuration="0ms">
+    <mat-tab >
+      <div class="flight-details-main">
+
+        <!-- {{ seg | json }} -->
+        <div class="airlines">
+          <div class="airline-image">
+            <img src="seg?.Airline?.AirlineName | airImage" alt="" />
+          </div>
+          <div class="airline-text">
+            <h4>
+              AirlineName
+            </h4>
+            <span
+              >BookingClass
+              AirlineCode
+             FlightNumber
+             CabinClass </span
+            >
+          </div>
+        </div>
+        <!---flight-details-right-->
+        <div class="flight-details-right">
+          <div class="flight-going">
+            <div class="flight-form">
+              <h3>
+                CityName
+                AirportCode
+              </h3>
+              <h2>
+                <!-- {{ seg?.Origin?.DepTime | date: "shortTime" }} -->
+                getOutBoundOriginDateMulti
+              </h2>
+              <span> seg?.Origin?.DepTime | date: "longDate" </span>
+              <span> seg?.Origin?.Airport?.AirportName </span>
+            </div>
+            <!---non-stop-->
+            <div class="flight-time">
+              <h3>
+                convertHoursToMin
+              </h3>
+              <span></span>
+              <h3>
+                convertStepsToNoSteps
+              </h3>
+            </div>
+            <div class="flight-going">
+              <div class="flight-form">
+                <h3>
+                  seg?.Destination?.Airport?.CityName
+                   seg?.Destination?.Airport?.AirportCode
+                </h3>
+                <h2>
+                  getOutBoundDestinationDateMulti
+                  <!-- {{ seg?.Destination?.ArrTime | date: "shortTime" }} -->
+                </h2>
+                <span>
+                  seg?.Destination?.ArrTime | date: "longDate"
+                </span>
+                <span>seg?.Destination?.Airport?.AirportName </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <!-- <mat-tab label="Second">Content 2</mat-tab> -->
+    <!-- <mat-tab label="Third">Content 3</mat-tab> -->
+  </mat-tab-group>
+             </div>
+
+<!-- {{InBoundSegment.length | json}} -->
+            <div class="inBound" *ngIf="inBoundFound"  >
+              <h4 class="h4">IN BOUND</h4>
+
+          <mat-tab-group animationDuration="0ms">
+            <mat-tab >
+              <div class="flight-details-main">
+
+
+                <div class="airlines">
+                  <div class="airline-image">
+                    <img src="seg?.Airline?.AirlineName | airImage" alt="" />
+                  </div>
+                  <div class="airline-text">
+                    <h4>
+                      seg?.Airline?.AirlineName
+                    </h4>
+                    <span
+                      >seg?.Airline?.BookingClass
+                       seg?.Airline?.AirlineCode
+                       seg?.Airline?.FlightNumber
+                      seg?.Airline?.CabinClass </span
+                    >
+                  </div>
+                </div>
+
+                <div class="flight-details-right">
+                  <div class="flight-going">
+                    <div class="flight-form">
+                      <h3>
+                         seg?.Origin?.Airport?.CityName
+                         seg?.Origin?.Airport?.AirportCode
+                      </h3>
+                      <h2>
+                        getOutBoundOriginDateMulti
+                      </h2>
+                      <span>seg?.Origin?.DepTime | date: "longDate" </span>
+                      <span>seg?.Origin?.Airport?.AirportName </span>
+                    </div>
+
+                    <div class="flight-time">
+                      <h3>
+                        convertHoursToMin
+                      </h3>
+                      <span></span>
+                      <h3>
+                         convertStepsToNoSteps
+                      </h3>
+                    </div>
+                    <div class="flight-going">
+                      <div class="flight-form">
+                        <h3>
+                           seg?.Destination?.Airport?.CityName
+                           seg?.Destination?.Airport?.AirportCode
+                        </h3>
+                        <h2>
+                          getOutBoundDestinationDateMulti
+
+                        </h2>
+                        <span>
+                          seg?.Destination?.ArrTime | date: "longDate"
+                        </span>
+                        <span>seg?.Destination?.Airport?.AirportName </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+
+          </mat-tab-group>
+            </div>
+      </div>
+
+
+         </div>
+
+
+
+
+
+      </div>
+
+      <!---end-flight-details-->
+      <!-----------------fare-summary-------------->
+      <div class="fare-summary-area" *ngIf="fareSummary == true">
+        <div class="summary-table">
+          <!---table-head-->
+          <div class="summary-table-head">
+            <div class="summary-table-row">
+              <div class="summary-table-heading">
+                <h3>Pax Type</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Base Fare</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Tax</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Other</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>AIT & VAT</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Pax Count</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h2>Sub Total</h2>
+              </div>
+            </div>
+          </div>
+          <!---TABLE-HEAD-END-->
+          <!---TABLE-BODY-->
+          <div class="summary-table-body">
+            <div class="summary-table-row" >
+              <div class="summary-table-data">
+                <h3> fare?.PaxType </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3> fare?.BaseFare </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3> fare?.Tax </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3> fare?.OtherCharges </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3> fare?.ServiceFee </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3>fare?.PassengerCount </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3> countSubTotal </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---END-->
+
+      <!-------------Baggage-summary--------------->
+      <div class="fare-summary-area" *ngIf="badggage == true">
+        <div class="summary-table">
+          <!---table-head-->
+          <div class="summary-table-head">
+            <div class="summary-table-row">
+              <div class="summary-table-heading">
+                <h3>Baggage</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Check in</h3>
+              </div>
+              <div class="summary-table-heading">
+                <h3>Cabin</h3>
+              </div>
+            </div>
+          </div>
+          <!---TABLE-HEAD-END-->
+          <!---TABLE-BODY-->
+          <div class="summary-table-body">
+            <div class="summary-table-row" >
+              <div class="summary-table-data">
+                <h3>Adult</h3>
+              </div>
+              <div class="summary-table-data">
+                <h3>
+                  getBaggageWeightDetails
+                </h3>
+              </div>
+              <div class="summary-table-data">
+                <h3>
+                   seg?.baggageDetails[0]?.Cabin
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---END-->
+      <!---------cancellation------------>
+      <div class="cancellation" *ngIf="cancellation == true">
+        <div class="cancellation-main">
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>Time frame</h3>
+              <span>(From Scheduled flight departure)</span>
+            </div>
+            <div class="cancellation-details">
+              <h3>Airline Fee + Airtrips Fee</h3>
+              <span>(Per passenger)</span>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>0 hours to 24 hours*</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 1800 + 0</h3>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>24 hours to 365 days*</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 1500 + 0</h3>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>Time frame</h3>
+              <span>(After flight departure)</span>
+            </div>
+            <div class="cancellation-details">
+              <h3>Airline Fee + Airtrips Fee</h3>
+              <span>(Per passenger)</span>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>After flight departure</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 2000 + 0</h3>
+            </div>
+          </div>
+          <!------end------>
+        </div>
+      </div>
+      <!-------end------->
+
+      <!--------- data change ------------>
+      <div class="cancellation" *ngIf="dataChange == true">
+        <div class="cancellation-main">
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>Time frame</h3>
+              <span>(From Scheduled flight departure)</span>
+            </div>
+            <div class="cancellation-details">
+              <h3>Airline Fee + Airtrips Fee</h3>
+              <span>(Per passenger)</span>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>0 hours to 24 hours*</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 2000 + 0 + Fare difference</h3>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>24 hours to 365 days*</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 1500 + 0 + Fare difference</h3>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>Time frame</h3>
+              <span>(After flight departure)</span>
+            </div>
+            <div class="cancellation-details">
+              <h3>Airline Fee + Airtrips Fee</h3>
+              <span>(Per passenger)</span>
+            </div>
+          </div>
+          <!------end------>
+          <!---cancellation-details-area-->
+          <div class="cancellation-details-area">
+            <div class="cancellation-details">
+              <h3>After flight departure</h3>
+            </div>
+            <div class="cancellation-details">
+              <h3>Adult : 1200 + 0 + Fare difference</h3>
+            </div>
+          </div>
+          <!------end------>
+        </div>
+      </div>
+      <!-------end------->
+    </div>
+  </div>
+</div>

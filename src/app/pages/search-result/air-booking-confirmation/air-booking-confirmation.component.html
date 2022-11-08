@@ -1,0 +1,82 @@
+<div class="dialog-container">
+  <div class="header">
+    <h1>Confirm Your Booking Info</h1>
+    <div class="line"></div>
+  </div>
+  <div class="information">
+    <div class="left">
+      <!-- <h2>{{trip?.launch?.name}}</h2> -->
+      <!--      <p>LNC003MK SHIPPING LINES</p>-->
+      <!-- <p>Starting Point: {{trip?.from?.name}}</p>
+      <p>Ending Point: {{trip?.to?.name}}</p>
+      <p>DEPARTURE DATE: {{trip?.dateString}}</p>
+      <p>DEPARTURE TIME: {{trip?.schedule?.timeString}}</p> -->
+    </div>
+    <div class="right">
+      <h2>Person Information</h2>
+      <p>Name: {{user?.name}}</p>
+      <p>Phone No: {{user?.phoneNo}}</p>
+      <p>Email: {{user?.email ? user?.email : 'N/A'}}</p>
+      <p>Gender: {{user?.gender ? user?.gender : 'N/A'}}</p>
+    </div>
+  </div>
+  <div class="seat-info">
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr class="table-head">
+          <th scope="col">{{'Seat#'}}</th>
+          <th scope="col">{{'Fare(৳)'}}</th>
+        </tr>
+        </thead> <!-- End Table Head -->
+        <!-- <tr
+          *ngFor="let data of selectedSeatData; let i = index">
+          <td [attr.data-label]="'Seat#'">{{data.seatNo}}</td>
+          <td [attr.data-label]="'Fare(৳)'">{{data.seatFare}}</td>
+        </tr> -->
+        <!-- End Table Body -->
+
+        <tr *ngIf="discount > 0" style="background: #00bf00; color: #fff;">
+          <td>Discount = </td>
+          <td>{{discount}}</td>
+        </tr> <!-- END DISCOUNT VIEW -->
+
+        <tr>
+          <td>Service Charge </td>
+          <td>{{data?.ticketData?.bookData?.serviceCharge}}</td>
+        </tr> <!-- END GRAND TOTAL -->
+        <tr>
+          <td>Total = </td>
+          <!-- <td>{{grandTotal}}</td> -->
+        </tr> <!-- END GRAND TOTAL -->
+      </table>
+
+    </div>
+  </div> <!-- EMD SEAT INFO -->
+
+
+  <!--  <div class="desc">-->
+  <!--    <p><span>Note:</span> All the payment will control by ssl commerce payment. All the return policy, terms & conditions apply by ssl.</p>-->
+  <!--  </div>-->
+  <div class="apply-coupon">
+    <a>Have a coupon? Apply now</a>
+    <form class="coupon-form" [formGroup]="dataForm" (ngSubmit)="onCouponApply()" #formRef="ngForm">
+      <mat-form-field class="coupon-input" appearance="outline">
+        <mat-label>Coupon Code</mat-label>
+        <input matInput placeholder="Enter a valid coupon code" formControlName="couponCode">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <div class="coupon-action">
+        <button *ngIf="!couponData" type="submit" mat-raised-button color="primary">Apply</button>
+        <button *ngIf="couponData" type="button" mat-raised-button color="warn" (click)="removeCoupon()">Remove</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="action">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="accent" (click)="onConfirmBooking()">Confirm Booking</button>
+  </div>
+</div>
+

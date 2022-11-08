@@ -1,0 +1,149 @@
+<section class="admin-data-sec">
+  <div class="top-data-header">
+    <div class="title">
+      <h2>Booked Tickets</h2>
+    </div>
+
+    <!-- <form class="table-search" #searchForm=ngForm>
+      <input type="text"
+             #searchInput
+             name="searchTerm"
+             autocomplete="off"
+             ngModel placeholder="Search">
+      <button><i class="fa fa-search"></i></button>
+    </form> -->
+
+    <div class="action">
+
+      <div class="sort">
+        <!-- <button mat-raised-button color="primary" [matMenuTriggerFor]="menuFilterDate">
+          Filter Date
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menuFilterDate="matMenu">
+          <button *ngFor="let data of filterDates; let i = index" mat-menu-item
+                  (click)="filterDataByDate(data.value, i + 1)"
+                  [class.dropdown-active]="activeFilterDate === i + 1">{{data.viewValue}}</button>
+        </mat-menu> -->
+      </div>
+
+      <div class="sort">
+        <!-- <button mat-raised-button color="primary" [matMenuTriggerFor]="menuFilter">
+          Filter By
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menuFilter="matMenu">
+          <button *ngFor="let data of allHosts; let i = index" mat-menu-item (click)="filterData(data.value, i + 1)"
+                  [class.dropdown-active]="activeFilter === i + 1">{{data.viewValue}}</button>
+        </mat-menu> -->
+      </div>
+
+      <div class="sort">
+        <!-- <button mat-raised-button color="primary" [matMenuTriggerFor]="menuSort">
+          Sort By
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menuSort="matMenu">
+          <button mat-menu-item (click)="sortData({title: 1}, 1)" [class.dropdown-active]="activeSort === 1">A-Z
+          </button>
+        </mat-menu> -->
+      </div>
+
+    </div>
+
+  </div> <!-- END TOP DATA HEADER -->
+
+  <hr class="center-square">
+
+  <div class="table-wrapper space">
+
+    <div class="table-action" [class.dual]="activeSort || activeFilter || activeFilterDate">
+      <div class="left" *ngIf="activeSort || activeFilter || activeFilterDate">
+        <button mat-stroked-button color="accent" (click)="onRemoveAllQuery()">
+          <mat-icon>close</mat-icon>
+          Clear Filter
+        </button>
+      </div>
+    </div> <!-- END Table Action -->
+
+    <table>
+      <tr>
+        <!-- <th>Ticket No</th> -->
+        <th>Booking Date</th>
+        <th>Booking ID</th>
+        <th>Order ID</th>
+        <th>Dep. Date</th>
+        <th>Dep. Origin</th>
+        <th>Destination</th>
+        <th>Payment Status</th>
+        <th>Payment Method</th>
+        <!-- <th>From</th>
+        <th>To</th> -->
+        <!-- <th>Expired</th> -->
+        <!--        <th>Booked By</th>-->
+        <th>Actions</th>
+      </tr>
+
+      <tr
+        *ngFor="let data of userOrder;let indexOfelement=index;">
+        <td>
+          {{data.bookingDate | date}}
+        </td>
+        <td>{{data?.bookingId}}</td>
+        <td>{{data?.orderId}}</td>
+        <td>{{data?.depDate}}</td>
+        <td>{{data?.origin}}</td>
+        <td>{{data?.destination}}</td>
+        <td>{{data?.paymentStatus}}</td>
+        <td>{{data?.paymentMethod || 'N/A'}}</td>
+        <td class="td-action">
+          <button [routerLink]="['details', data?._id]" [queryParams]="{hostname: data.hostname}" mat-mini-fab>
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </tr>
+      <!-- <tr
+        *ngFor="let data of launchSharedTickets">
+        <td>
+          {{data.ticketNo}}
+        </td>
+        <td>{{data.launch?.name}}</td>
+        <td>{{data.hostname}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.phoneNo}}</td>
+        <td>{{data.journeyDateString}}</td>
+        <td>{{data.schedule?.timeString}}</td>
+        <td>{{data.seats | launchSeatInfo : 'booked'}}</td>
+        <td>{{data.seats | launchSeatInfo : 'canceled'}}</td>
+        <td>{{data.form?.name}}</td>
+        <td>{{data.to?.name}}</td>
+        <td>{{data.expTime | expireTime}}</td>
+              <td>{{data.bookedBy}}</td>-->
+        <!-- <td class="td-action">
+          <button [routerLink]="['details', data?._id]" [queryParams]="{hostname: data.hostname}" mat-mini-fab>
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </tr> -->
+    </table>
+  </div>
+
+  <div class="pagination-container">
+    <!-- <pagination-controls
+      class="data-pagination"
+      [autoHide]="true"
+      [maxSize]="15"
+      (pageChange)="onPageChanged($event)">
+    </pagination-controls> -->
+  </div>     <!-- END PAGINATION -->
+
+
+  <!-- LOADING TEMPLATE -->
+  <!-- <ngx-spinner bdColor="rgba(0, 0, 0, 0.5)" size="medium" color="#fff" type="ball-atom" [fullScreen]="false">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner> -->
+
+</section>
+
+
+

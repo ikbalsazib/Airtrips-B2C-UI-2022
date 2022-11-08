@@ -1,0 +1,300 @@
+<!---header-area-->
+<header class="header-area">
+    <!---header-top-->
+  <div class="header-top-area">
+    <!---header-top-left-->
+    <div class="header-top-left">
+      <!---header-social--->
+      <div class="header-social">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+      <!---header-contact-->
+      <div class="header-contact">
+        <a href="mailto:">contact@airtrips.net</a>
+      </div>
+    </div>
+    <!--header-top-midle-->
+    <div class="header-top-midle">
+      <ul>
+        <li><span>Sales:</span><a href="tel:+8801763548763">+8801960666222</a></li>
+        <li><span>Support:</span><a href="tel:+8801763548763">09617666222</a></li>
+      </ul>
+    </div>
+    <!---header-top-right-->
+    <div class="header-top-right">
+      <!---header-country-area-->
+      <div class="header-country-area">
+        <ul>
+          <!-- (click)="currencyActive()" -->
+          <!-- <i class="fa fa-angle-down"></i> -->
+          <li >
+            <span *ngIf="countryData !== null" >{{countryData?.currency?.code}} </span>
+            <span *ngIf="countryData?.currency?.symbol"> ( {{countryData?.currency?.symbol}} ) </span>
+            <span *ngIf="countryData == null" >BDT</span>
+          </li>
+          <li style="position: relative; top: 4px;" (click)="languageActive()"><span>
+                      <img *ngIf="countryData !== null" [src]="countryData ? countryData.flag : 'src/assets/images/image/flag-800.png'" alt="">
+                      <img *ngIf="countryData == null" src="/assets/images/image/flag-800.png" alt="">
+                      </span> <i class="fa fa-angle-down" style="position: relative; top: -1px;"></i>
+          </li>
+        </ul>
+        <!---language-->
+        <div class="language" [ngClass]="{'language-active': language == true}">
+          <!--language-title-->
+          <div class="language-title">
+            <h3>Select your Countries</h3>
+            <span class="cross" (click)="languageInactive()">
+                          <mat-icon>clear</mat-icon>
+                        </span>
+          </div>
+          <div class="all-lang">
+            <h4>All Countries</h4>
+            <ul>
+              <li *ngFor="let data of countries; let i = index" (click)="onSelectedCountry(data)">
+                <a href="#">
+                  <div class="lang-flag">
+                    <img [src]="data.flag" [alt]="data.name"> <span>{{data.name}}</span>
+                  </div>
+                  <!--lang-check-->
+                  <div class="lang-check">
+                    <i class="fa fa-check showCheck"></i>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div><!---language-end-->
+        <!---currency-->
+        <div class="currency" [ngClass]="{'currency-active': currency == true}">
+
+          <div class="currency-title">
+            <h3>Select your currency</h3>
+            <span class="cross" (click)="currencyInactive()">
+                          <mat-icon>clear </mat-icon>
+                        </span>
+          </div>
+          <!---suggest-currency-->
+          <div class="suggest-currency">
+            <h4>Suggest for you</h4>
+            <ul>
+              <li *ngFor="let data of [1,2,3,4,5,6]">
+                <a href="#">
+                  <div class="currency-text">
+                    <span>U.S Dollar <br> USD </span>
+                  </div>
+                  <!--lang-check-->
+                  <div class="currency-check">
+                    <i class="fa fa-check"></i>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+          <!---suggest-currency-->
+          <div class="all-currency">
+            <!-- <h4>All currency</h4>
+                <ul>
+                <li *ngFor="let data of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
+                    <a href="#">
+                        <div class="currency-text">
+                           <span>U.S Dollar <br> USD </span>
+                        </div>
+                        <div class="currency-check">
+                            <i class="fa fa-check"></i>
+                        </div>
+                    </a>
+                </li>
+
+        </ul> -->
+          </div>
+        </div>
+        <!---currency-end-->
+
+
+
+
+      </div><!---header-country-area-end-->
+
+    </div>
+  </div><!---header-top-end-->
+    <!---header-main-area-->
+    <div class="header-main-area" >
+        <!--logo-area-->
+        <div class="logo-area">
+            <a href="#"><img src="./assets/images/logo/AirTrips final 05.png" alt=""></a>
+        </div>
+         <div class="header-main-right">
+             <!---header-regibtn-area-->
+            <div class="header-reg-btn">
+                <ul style="text-align: right;">
+                    <li ><a routerLink="/registration">Register</a></li>
+                    <li ><a routerLink="/login" >Login</a></li>
+                    <li
+
+
+                      class="dropdown-mat no-select"
+                    ><a routerLink="/account" >
+                      <div fxHide.xs style="display: flex; align-items: center">
+                        <span>My Account</span>
+                        <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+                      </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <!---menu-bar-->
+            <div style="display: flex; align-items: center; justify-content: flex-end;">
+                <div class="menu-bar" (click)="slideMenuActive()" [ngClass]="{'menu-bar-active':slideMenu == true}">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+         </div>
+    </div>
+</header>
+
+<!---responsive-slide-menu"-->
+<div class="overlap" [class]=" slideMenu? 'overlap-show':'overlap-hide'" (click)=" slideOut()"></div>
+
+  <!---side-nav-area-->
+  <div class="side-nav" [class]=" slideMenu? 'slideIn':'slideDown'">
+    <!--side-bar-menu-->
+    <div class="side-bar-menu" >
+        <ul>
+            <li>
+                <a href="#" class="active-menu">
+                    <span class="menu-icon"><i class="fa fa-home"></i></span>
+                    <span class="menu-text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-plane-departure"></i></span>
+                    <span class="menu-text">Flights</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-hotel"></i></span>
+                    <span class="menu-text">Hotel</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-torii-gate"></i></span>
+                    <span class="menu-text">Russia Tour</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-address-book"></i></span>
+                    <span class="menu-text">Contact</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a target="_blank" href="">
+                    <span class="menu-icon"><i class="fa-solid fa-calculator"></i></span>
+                    <span class="menu-text" *ngIf="menu == true">Zakat Calculator</span>
+                </a>
+            </li> -->
+            <li>
+                <a target="_blank" href="">
+                    <span class="menu-icon"><i class="fa-solid fa-calculator"></i></span>
+                    <span class="menu-text" >Visa Support</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-sign-in-alt"></i></span>
+                    <span class="menu-text">Login</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="menu-icon"><i class="fa fa-user"></i></span>
+                    <span class="menu-text">Registration</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+     <!-----------time-area-------->
+     <div class="time-area-main">
+        <!---live-clock-->
+    <div class="live-clock">
+        <!---clock-->
+        <div class="clock">
+           <div class="time-area">
+            <!--time-->
+            <div class="time">
+                <h3>hour</h3>
+            </div>
+            <!--separte-->
+            <div class="separte">
+                <span>:</span>
+            </div>
+              <!--time-->
+            <div class="time">
+                <h3>min</h3>
+            </div>
+            <!--separte-->
+            <div class="separte">
+                <span>:</span>
+            </div>
+             <!--time-->
+             <div class="time">
+                <h3>sec</h3>
+            </div>
+           </div>
+           <!--time-format-->
+           <div class="time-format">
+               <span>timeFormat</span>
+           </div>
+        </div>
+    </div><!---live-clock-end-->
+    <!---prayer-time-->
+    <div class="prayer-time-area">
+        <!---prayer-time-top-->
+        <div class="prayer-time-top">
+            <!---prayer-time-top-left-->
+            <div class="prayer-time-top-left">
+                <div>
+                    <img src="./assets/images/logo/AirTrips Very Newddddddddddddddd.png" alt="">
+                </div>
+                <div>
+                    <span>Airtrips Prayer Time</span>
+                </div>
+            </div>
+            <!---prayer-time-top-right-->
+            <div class="prayer-time-top-right">
+                <h3><i class="fa fa-map-marker-alt"></i>Dhaka</h3>
+            </div>
+        </div><!---prayer-time-top-end-->
+        <!---prayer-info-->
+        <div class="prayer-info">
+            <h3><span>Fajr</span> at <span>04:29 </span> AM</h3>
+            <h3><span>Dhuhr</span> at <span>12:54 </span> PM</h3>
+            <h3><span>Asr</span> at <span>04:41 </span> PM</h3>
+            <h3><span>Maghrib</span> at <span>06:35 </span> PM</h3>
+            <h3><span>Isha</span> at <span>08:30 </span> PM</h3>
+        </div>
+
+    </div>
+
+
+
+</div><!-----------time-area---end------->
+
+
+
+
+
+
+</div><!---side-nav-area-end-->

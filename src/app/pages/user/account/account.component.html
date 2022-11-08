@@ -1,0 +1,53 @@
+<div class="container-fluid" fxLayout.lt-sm="column" fxLayout="row" fxLayoutGap="16px" >
+  <div class="side-bar">
+    <div class="profile-view">
+      <div class="img-thumb">
+        <img [src]="imgPlaceHolder" >
+        <div class="edit-profile-img">
+          <button mat-icon-button (click)="profileImagePicker.click()">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        <input [hidden]="true" #profileImagePicker type="file" (change)="fileChangeEvent($event)" accept="image/*"/>
+      </div>
+      <div class="desc">
+        <h2>{{user?.name? user.name : 'User'}}</h2>
+        <p>{{user?.phoneNo ? user.phoneNo : 'N/A'}}</p>
+      </div>
+    </div> <!--  END PROFILE VIEW -->
+
+    <div class="nav-link">
+      <ul>
+        <li [routerLink]="['basic-info']" routerLinkActive="active-list">
+          <mat-icon>perm_identity</mat-icon>
+          <span> Basic Information</span>
+        </li>
+        <li [routerLink]="['my-booking']" routerLinkActive="active-list">
+          <mat-icon>insert_emoticon</mat-icon>
+          <span> My Booking</span>
+        </li>
+<!--        <li [routerLink]="['comments']" routerLinkActive="active-list">-->
+<!--          <mat-icon>star</mat-icon>-->
+<!--          <span> My Events</span>-->
+<!--        </li>-->
+        <li [routerLink]="['order-list']" routerLinkActive="active-list">
+          <mat-icon>insert_emoticon</mat-icon>
+          <span> Order List</span>
+        </li>
+        <li [routerLink]="['transactions']" routerLinkActive="active-list">
+          <mat-icon>payments</mat-icon>
+          <span> Transactions History</span>
+        </li>
+        <li (click)="onLogout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+  <div class="content-view" fxFlex>
+    <router-outlet></router-outlet>
+  </div>
+</div>

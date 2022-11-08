@@ -1,0 +1,52 @@
+<div class="section5-left">
+  <!-- <div class="container"> -->
+    <!--blog-info-->
+    <!-- <a href="#"> -->
+      <div class="blog-info">
+        <div class="blog-img">
+          <img [src]="blog?.image ? blog?.image : './assets/images/image/special offer.jpg'" alt="blog?.title" />
+        </div>
+        <!---blog-text-->
+        <div class="blog-text-first">
+
+        <div class="blog-container">
+          <div class="blog-text-first-content">
+            <h3>{{blog?.title}}</h3>
+            <p>{{blog?.shortDescription}}</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    <!-- </a> -->
+  <!-- </div> -->
+</div>
+
+<div class="section5-left">
+  <div class="blog-container">
+    <div class="blog_body_content" [innerHTML]="blog?.body ? blog?.body : '' | safeHtmlCustom">
+    </div>
+  </div>
+</div>
+<div class="section5-left">
+  <div class="blog-container">
+    <div class="blog_faq_title">
+      <h4>Faq title</h4>
+      <p>Faq short Description</p>
+    </div>
+    <div class="blog_faq" >
+      <mat-accordion >
+      <mat-expansion-panel *ngFor="let data of blog?.blogFaq">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           <p>{{data?.faqTitle}}</p>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div class="blog_body_content" [innerHTML]="data?.faqBody ? data?.faqBody : '' | safeHtmlCustom">
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    </div>
+  </div>
+</div>

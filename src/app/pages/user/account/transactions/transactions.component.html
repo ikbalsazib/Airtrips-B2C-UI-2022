@@ -1,0 +1,135 @@
+ <section class="admin-data-sec">
+   <div class="top-data-header">
+     <div class="title">
+       <h2>Your All Transactions</h2>
+     </div>
+
+     <form class="table-search" #searchForm=ngForm>
+       <input type="text"
+              #searchInput
+              name="searchTerm"
+              autocomplete="off"
+              ngModel placeholder="Search">
+       <button><i class="fa fa-search"></i></button>
+     </form>
+
+     <div class="action">
+
+       <div class="sort">
+         <button mat-raised-button color="primary" [matMenuTriggerFor]="menuFilterDate">
+           Filter Date
+           <mat-icon>arrow_drop_down</mat-icon>
+         </button>
+         <mat-menu #menuFilterDate="matMenu">
+           <button  mat-menu-item >button</button>
+         </mat-menu>
+       </div>
+
+
+
+       <div class="sort">
+         <button mat-raised-button color="primary" [matMenuTriggerFor]="menuSort">
+           Sort By
+           <mat-icon>arrow_drop_down</mat-icon>
+         </button>
+         <mat-menu #menuSort="matMenu">
+           <button mat-menu-item ="activeSort === 1">A-Z
+           </button>
+         </mat-menu>
+       </div>
+
+     </div>
+
+   </div>
+   <!-- &lt;!&ndash; END TOP DATA HEADER &ndash;&gt;   -->
+
+   <hr class="center-square">
+
+   <div class="table-wrapper space">
+
+     <div class="table-action">
+       <div class="left">
+         <button mat-stroked-button color="accent" >
+           <mat-icon>close</mat-icon>
+           Clear Filter
+         </button>
+       </div>
+     </div>
+     <!-- &lt;!&ndash; END Table Action &ndash;&gt;   -->
+
+     <table>
+      <tr>
+        <!-- <th>Ticket No</th> -->
+        <th>Booking ID</th>
+        <th>Order ID</th>
+        <th>Total Amount</th>
+        <th>Payment Status</th>
+        <th>Payment Method</th>
+        <th>Payment Date</th>
+        <th>Actions</th>
+      </tr>
+       <tr
+        *ngFor="let data of userOrder;let indexOfelement=index;">
+        <td>{{data?.bookingId}}</td>
+        <td>{{data?.orderId}}</td>
+        <td>{{data?.totalAmount}}</td>
+        <td>{{data?.paymentStatus}}</td>
+        <td>{{data?.paymentMethod || 'N/A'}}</td>
+        <td>{{data?.paymentDate || 'N/A'}}</td>
+        <td class="td-action">
+          <button [routerLink]="['details', data?._id]" [queryParams]="{hostname: data.hostname}" mat-mini-fab>
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </tr>
+       <!-- <tr *ngFor="let data of userOrder">
+         <td>1</td>
+         <td>MR KARIM AHMED</td>
+         <td>5779897892789</td>
+         <td>31/05/2022</td>
+         <td>02:00 PM</td>
+         <td>2</td>
+         <td>1</td>
+         <td>Dhaka</td>
+         <td>Cox's Bazar</td>
+         <td>05/06/2022</td>
+         <td>MR KARIM AHMED</td>
+         <td></td>
+         <td class="td-action">
+           <button color="accent"  mat-mini-fab>
+             <mat-icon>visibility</mat-icon>
+           </button>
+
+
+         </td>
+       </tr> -->
+     </table>
+   </div>
+
+   <div class="pagination-container">
+     <pagination-controls
+       class="data-pagination"
+       [autoHide]="true"
+       [maxSize]="15"
+      >
+     </pagination-controls>
+ </div>
+   <!-- &lt;!&ndash; END PAGINATION &ndash;&gt;    -->
+
+
+   <!-- &lt;!&ndash; LOADING TEMPLATE &ndash;&gt;   -->
+<!-- <ngx-spinner bdColor="rgba(0, 0, 0, 0.5)" size="medium" color="#fff" type="ball-atom" [fullScreen]="false">-->
+<!--   <p style="color: white"> Loading... </p>-->
+<!-- </ngx-spinner>-->
+
+</section>
+
+
+
+
+
+
+
+
+
+

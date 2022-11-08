@@ -1,0 +1,13 @@
+
+@import'../../../../theme/varriable';
+
+.not_found_content{
+    font-size: 25px;
+    font-family: $font-en-primary;
+    font-weight: 500;
+}
+.not_found_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

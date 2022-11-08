@@ -1,0 +1,833 @@
+<!---section-1-area-->
+
+<app-flight-search *ngIf="cancel == true"></app-flight-search>
+<!---section2-->
+<div class="section2">
+  <div class="container">
+    <!---search-info-area-->
+    <div class="search-info-area" *ngIf="change == true">
+      <div class="search-info-main">
+        <div class="search-info-left">
+          <div class="search-user-info">
+            <h3>
+              {{ selectedTrip?.viewValue }} flight for
+              {{0 + " Adult(s)"}}
+              {{0 + " Child(s)"}}
+              {{0 + " Infant(s)"}}
+              in {{ selectedClass?.viewValue }}
+            </h3>
+          </div>
+          <div >
+            <div class="search-info-list">
+              <ul>
+                <li>
+                  <h4>Depart</h4>
+                  <h3>Dhaka, Bangladesh - Shahjalal International Airport [DAC] | Friday, November 11, 2022</h3>
+                </li>
+                <li >
+                  <h4>Return</h4>
+                  <h3>Sylhet, Bangladesh - Osmani International Airport [ZYL] | Saturday, November 12, 2022</h3>
+                </li>
+                <!-- <li></li>
+                <li>
+                  <h4>From</h4>
+                  <h3>{{ topSearchInfoBar?.from?.name }}</h3>
+                </li>
+                <li>
+                  <h4>To</h4>
+                  <h3>{{ topSearchInfoBar?.to?.name }}</h3>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div >
+            <div class="search-info-list">
+              <!-- <ul>
+                <li>
+                  <h4>Depart</h4>
+                  <h3>{{ topSearchInfoBar?.city[0]?.fromMulti?.name }} | {{topSearchInfoBar?.city[0]?.departMulti | date: "fullDate"}}
+                  </h3>
+                </li>
+                <li
+                  *ngIf="
+                    topSearchInfoBar?.city[topSearchInfoBarCityLength - 1]
+                      ?.departMulti
+                  "
+                >
+                  <h4>Return</h4>
+                  <h3>{{topSearchInfoBar?.city[topSearchInfoBarCityLength - 1]
+                        ?.fromMulti?.name}} | {{topSearchInfoBar?.city[topSearchInfoBarCityLength - 1]
+                        ?.departMulti | date: "fullDate"}}
+                  </h3>
+                </li>
+                <li></li>
+                <li>
+                  <h4>From</h4>
+                  <h3>{{ topSearchInfoBar?.city[0]?.fromMulti?.name }}</h3>
+                </li>
+                <li>
+                  <h4>To</h4>
+                  <h3>
+                    {{
+                      topSearchInfoBar?.city[topSearchInfoBarCityLength - 1]
+                        ?.fromMulti?.name
+                    }}
+                  </h3>
+                </li>
+              </ul> -->
+              <ul>
+                <li class="mhi" *ngFor="let data of [1,2];let i=index">
+                  <div>
+                    <h4>City {{i + 1}}</h4>
+                    <h3>DAC - ZYL</h3>
+                    <h3> Friday, November 11, 2022</h3>
+                  </div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                  <span> | </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="search-info-right">
+          <ul>
+            <li>
+              <button (click)="changeShow()">
+                <i class="fa fa-edit"></i> Change
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!---brand-area-->
+    <div class="brand-area" [class]="change ? 'brand-top' : 'i'">
+      <swiper
+        [grabCursor]="true"
+        [slidesPerView]="1"
+        [spaceBetween]="10"
+        [breakpoints]="{
+          '0': {
+            slidesPerView: 1.5
+          },
+          '370': {
+            slidesPerView: 2
+          },
+          '440': {
+            slidesPerView: 2.5
+          },
+          '520': {
+            slidesPerView: 3
+          },
+          '620': {
+            slidesPerView: 3.5
+          },
+          '700': {
+            slidesPerView: 4
+          },
+
+          '800': {
+            slidesPerView: 4.5
+          },
+
+          '1000': {
+            slidesPerView: 5
+          },
+          '1150': {
+            slidesPerView: 6
+          },
+          '1300': {
+            slidesPerView: 7
+          }
+        }"
+        class="mySwiper"
+      >
+        <ng-container *ngFor="let data of [1,2,3]">
+          <ng-template swiperSlide>
+            <!--brand-details-->
+            <div class="brand-details">
+              <div class="brand-image">
+                <!-- <img src="./assets/images/png/airline.png" alt="" /> -->
+                <img src="/assets/images/image/039b6635-city-26939-16547ad1af4.jpg" alt=""/>
+              </div>
+              <div class="brand-text">
+                <h3>name</h3>
+                <span>BDT 1000</span>
+              </div>
+            </div>
+            <!--end-->
+          </ng-template>
+        </ng-container>
+      </swiper>
+    </div>
+    <!---end-->
+
+    <!---section2-main-->
+    <div class="section2-main">
+      <!---section2-left-->
+      <div class="section2-left">
+        <!--filter-icon-->
+        <div class="filter-icon">
+          <span (click)="filterToggle()"><i class="fa fa-filter"></i></span>
+        </div>
+        <!--filter-area-->
+        <div
+          class="filter-area"
+          [class]="filterShow ? 'filter-active' : 'in-active'"
+        >
+          <div class="filer-top">
+            <div>
+              <h3>Filter</h3>
+            </div>
+            <div>
+              <a href="#">Reset All</a>
+            </div>
+          </div>
+          <!---filter-body-->
+          <div class="filter-body">
+            <mat-accordion class="mat-ex">
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Popular filter</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="popular-body">
+                  <mat-checkbox class="mat-check"
+                  >Refundable Fares
+                  </mat-checkbox
+                  >
+                </div>
+              </mat-expansion-panel>
+              <!--stops-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Stops</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stop-body">
+                  <mat-checkbox class="mat-check">Non-Stop</mat-checkbox>
+                  <mat-checkbox class="mat-check">1 Stop</mat-checkbox>
+                  <mat-checkbox class="mat-check">1+ Stop</mat-checkbox>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Duration (h)-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Duration (h)</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <!-- <h4>Outbound (DAC - CGP)</h4> -->
+                  <p>durationLowest - durationHighValue</p>
+                  <!--                  [(value)]="durationLowest"-->
+                  <!--                  [(highValue)]="durationHighValue"-->
+                  <!--                  [options]="duration"-->
+                  <!--                  (mouseup)="mouseUpDuration($event)"-->
+                  <ngx-slider
+                    class="ng-slider"
+
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel>
+              <!--end-->
+              <!--Transit Time(h)-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Transit Time(h)</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+                  <!--                  [(value)]="outBoundTransitLowest"-->
+                  <!--                  [(highValue)]="outBoundTransitHighest"-->
+                  <!--                  [options]="transitOutBound"-->
+                  <!--                  (mouseup)="mouseUpOutBoundTransit($event)"-->
+                  <ngx-slider
+                    class="ng-slider"
+
+                  ></ngx-slider>
+                </div>
+                <div class="duration-body-body">
+                  <h4>Inbound (GMT+6)</h4>
+
+                  <!--                  [(value)]="inBoundTransitLowest"-->
+                  <!--                  [(highValue)]="inBoundTransitHighest"-->
+                  <!--                  [options]="transitInBound"-->
+                  <ngx-slider
+                    class="ng-slider"
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Departure Time-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Departure Time</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+
+                  <!-- (mouseup)="mouseUpOutBoundDeperture($event)" -->
+
+
+                  <ngx-slider
+                    class="ng-slider"
+                    [(value)]="outBoundDepartureLowest"
+                    [(highValue)]="outBoundDepartureHighest"
+                    [options]="departureOutBound"></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Outbound (GMT+6) -->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Arrival Time</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+                  <!--                  [(value)]="value4"-->
+                  <!--                  [(highValue)]="highValue4"-->
+                  <!--                  [options]="arrival"-->
+                  <ngx-slider
+                    class="ng-slider"
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+            </mat-accordion>
+          </div>
+          <!--filter-btn-->
+          <div class="filter-now-btn">
+            <button>Filter Now</button>
+          </div>
+        </div>
+      </div>
+      <!---end-->
+
+      <!---section2-right-->
+      <h2 class="not_found" style="display: none">Flights not found. Click change to search again.</h2>
+
+
+      <div class="section-middle">
+        <div class="resultsHeader">
+          <div class="result-header-outer">
+            <div class="single-result-header">
+              <div class="result-header-icon">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+              <div class="result-header-details">
+                <h3>Cheapest</h3>
+                <!-- <p>Tk {{cheapestValue?.totalFare}} <span>.</span> 31h 11m</p> -->
+                <p>Tk 6,990 <span>.</span> 1h 45m</p>
+              </div>
+            </div>
+          </div>
+          <div class="result-header-outer active-result-header">
+            <div class="single-result-header">
+              <div class="result-header-icon">
+                <i class="fa-solid fa-lightbulb-exclamation-on"></i>
+              </div>
+              <div class="result-header-details">
+                <h3>Best</h3>
+                <p>Tk 6,990 <span>.</span> 1h 45m</p>
+              </div>
+            </div>
+          </div>
+          <div class="result-header-outer">
+            <div class="single-result-header">
+              <div class="result-header-icon">
+                <i class="fa-solid fa-jet-fighter"></i>
+              </div>
+              <div class="result-header-details">
+                <h3>Quickest</h3>
+                <p>Tk 6,990 <span>.</span> 1h 45m</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section2-right">
+          <!---search-result-area-->
+          <div class="search-result-area">
+            <!---search-result-ticket-area-->
+            <div class="search-result-ticket-table-area">
+              <div class="ticket-table">
+                <!---ticket-table-head-->
+                <div class="ticket-table-head">
+                  <div class="table-row">
+                    <div class="table-heading space"><h3>Flight Name</h3></div>
+                    <div class="table-heading depart">
+                      <h3>Depart</h3>
+                    </div>
+                    <div class="table-heading price">
+                      <h3>Price <i class="fa fa-arrow-down"></i></h3>
+                    </div>
+                  </div>
+                </div>
+                <!--------------end-------------->
+                <!---table-body-->
+                <div class="table-body">
+                  <!-----------------ticket-data------------------------>
+                  <div class="ticket-data">
+                    <!-- {{ data | json }} -->
+                    <!--table-row-->
+
+                    <div class="one_way_table">
+                      <div class="table_multy_row">
+                        <!-- OutBound -->
+                        <div class="table-row">
+                          <div class="table-data space">
+                            <div class="airlines">
+                              <div class="airline-image">
+                                <!-- <img
+                                  [src]="seg?.Airline?.AirlineName | airImage"
+                                  alt=""
+                                /> -->
+                                <img
+                                  src="/assets/images/image/flag-800.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="airline-text">
+                                <h4>US-Bangla Airlines</h4>
+                                <span>(S) BS 531 Y</span
+                                >
+                              </div>
+                              <!-- <div class="check">
+                                <mat-radio-button
+                                  class="radio"
+                                  (click)="onSelectReturnFlight(data)"
+                                ></mat-radio-button>
+                              </div> -->
+                            </div>
+                          </div>
+                          <div class="table-data depart">
+                            <div class="depart-area">
+                              <div class="form">
+                                <h3>Dhaka (DAC)
+                                </h3>
+                                <span> 20:40</span>
+                              </div>
+                              <div class="dotted duration-data">
+
+
+                                <!-- <h3>{{ convertHoursToMin(seg) }}</h3> -->
+                                <h3>0h 50m</h3>
+                                <span class="dot"></span>
+                                <!-- <span>{{ convertSteps(seg) }}</span> -->
+                                <span>NaN Stop</span>
+
+                              </div>
+                              <div class="form">
+                                <h3>Sylhet (ZYL)</h3>
+                                <span> 20:30</span>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="table-book">
+                        <div class="table-data price">
+                          <div class="price-details">
+                            <span>9 Left at</span>
+                            <h3>BDT 6998</h3>
+                          </div>
+                          <!-- <div class="table-book">
+                                <button
+                                  style="cursor: pointer"
+                                  (click)="bookNow(data)"
+                                >
+                                  Book Now
+                                </button>
+                              </div> -->
+                        </div>
+                        <button style="cursor: pointer" routerLink="/booking">
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                    <!--end-->
+                    <!---details-area-->
+
+                    <app-single-search-result-card
+                      [data]="data"
+
+                    ></app-single-search-result-card>
+                    <!--details-area-->
+                  </div>
+                  <!-----------------ticket-data--end------------------------------>
+                </div>
+              </div>
+            </div>
+            <!------------------multi-city--end------------------------->
+          </div>
+          <!----end-->
+        </div>
+      </div>
+
+      <!---section2-left-->
+      <div class="section2-left">
+        <!--filter-icon-->
+        <div class="filter-icon">
+          <span><i class="fa fa-filter"></i></span>
+        </div>
+        <!--filter-area-->
+        <div
+          class="filter-area"
+          [class]="filterShow ? 'filter-active' : 'in-active'"
+        >
+          <div class="filer-top">
+            <div>
+              <h3>Filter</h3>
+            </div>
+            <div>
+              <a href="#">Reset All</a>
+            </div>
+          </div>
+          <!---filter-body-->
+          <div class="filter-body">
+            <mat-accordion class="mat-ex">
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Popular filter</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="popular-body">
+                  <mat-checkbox class="mat-check"
+                  >Refundable Fares
+                  </mat-checkbox
+                  >
+                </div>
+              </mat-expansion-panel>
+              <!--stops-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Stops</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stop-body">
+                  <mat-checkbox class="mat-check">Non-Stop</mat-checkbox>
+                  <mat-checkbox class="mat-check">1 Stop</mat-checkbox>
+                  <mat-checkbox class="mat-check">2 Stop</mat-checkbox>
+                  <mat-checkbox class="mat-check">3 Stop</mat-checkbox>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Duration (h)-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Duration (h)</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (DAC - CGP)</h4>
+                  <ngx-slider
+                    class="ng-slider"
+                    [(value)]="durationLowest"
+                    [options]="duration"
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Transit Time(h)-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Transit Time(h)</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+                  <ngx-slider
+                    class="ng-slider"
+                    [(value)]="outBoundTransitLowest"
+                    [(highValue)]="outBoundTransitHighest"
+                    [options]="transitOutBound"
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Departure Time-->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Departure Time</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+                  <!--                  [(value)]=""-->
+                  <!--                  [(highValue)]=""-->
+                  <!--                  [options]=""-->
+                  <ngx-slider
+                    class="ng-slider"
+
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+              <!--Outbound (GMT+6) -->
+              <mat-expansion-panel
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h4>Arrival Time</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="duration-body-body">
+                  <h4>Outbound (GMT+6)</h4>
+                  <!--                  [(value)]=""-->
+                  <!--                  [(highValue)]=""-->
+                  <!--                  [options]=""-->
+                  <ngx-slider
+                    class="ng-slider"
+
+                  ></ngx-slider>
+                </div>
+              </mat-expansion-panel
+              ><!--end-->
+            </mat-accordion>
+          </div>
+          <!--filter-btn-->
+          <div class="filter-now-btn">
+            <button>Filter Now</button>
+          </div>
+        </div>
+      </div>
+      <!---end-->
+    </div>
+    <!---main-end-->
+  </div>
+
+  <!---selected-ticket-->
+  <div class="selected-ticket">
+    <div class="container">
+      <div class="selected-ticket-main">
+        <!---ticket-info-->
+        <div class="select-ticket-info">
+          <div class="image">
+            <img src="./assets/images/png/01.png" alt=""/>
+          </div>
+          <div class="depart-area">
+            <div class="form">
+              <h3>AirportCode</h3>
+              <span>DepTime mediumTime</span>
+            </div>
+            <div class="dotted">
+              <span></span>
+            </div>
+            <div class="form">
+              <h3>
+                AirportCode
+              </h3>
+              <span>ArrTime mediumTime</span>
+            </div>
+          </div>
+          <div class="duration-data">
+            <h3>convertHoursToMin</h3>
+            <span>convertSteps</span>
+          </div>
+        </div>
+        <!---end-->
+        <!---ticket-info-->
+        <div class="select-ticket-info">
+          <div class="image">
+            <img src="./assets/images/png/01.png" alt=""/>
+          </div>
+          <div class="depart-area">
+            <div class="form">
+              <h3>bookingDepartFlight AirportCode
+
+              </h3>
+              <span>DepTime mediumTime</span>
+            </div>
+            <div class="dotted">
+              <span></span>
+            </div>
+            <div class="form">
+              <h3>AirportCode
+
+              </h3>
+              <span>ArrTime mediumTime</span>
+            </div>
+          </div>
+          <div class="duration-data">
+            <h3>convertHoursToMin</h3>
+            <span>convertSteps</span>
+          </div>
+        </div>
+        <!---end-->
+        <!---book-price-->
+        <!--        *ngIf="bookFlightPrice > 0"-->
+        <div class="book-price">
+          <div class="book-price-main">
+            <div>
+              <span>Price:</span>
+              <h3>Currency bookFlightPrice</h3>
+            </div>
+            <div>
+              <button
+                style="cursor: pointer"
+
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!---- search togle-option -->
+  <!-- -seat-select -->
+  <mat-menu class="seat-select" #seatMenu="matMenu">
+    <button mat-menu-item *ngFor="let data of airClasses" >
+      {{ data?.viewValue }}
+    </button>
+  </mat-menu>
+  <!-- -trip-select -->
+  <mat-menu class="trip-select" #tripMenu="matMenu">
+    <button mat-menu-item
+      *ngFor="let data of trips" >
+      {{ data?.viewValue }}
+    </button>
+  </mat-menu>
+
+  <!--person-->
+  <mat-menu class="person-select" #person="matMenu">
+    <div class="person">
+      <div class="person-info">
+        <ul>
+          <!-- <li *ngFor="let data of [1,2,4,4,5]"></li> -->
+          <li>
+            <!---person-left-->
+            <div class="person-left">
+              <h3>Adults</h3>
+              <span>12+ Yrs</span>
+            </div>
+            <!--quantity-->
+            <div class="quantity">
+              <!---mines-->
+              <div class="mines">
+                <button>-</button>
+              </div>
+              <!---input-box-->
+              <div class="quantity-input">
+                <input type="text" value="0"/>
+              </div>
+              <!---mines-->
+              <div class="plus">
+                <button>+</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!---person-left-->
+            <div class="person-left">
+              <h3>Childs</h3>
+              <span>(2 - 12 Yrs)</span>
+            </div>
+            <!--quantity-->
+            <div class="quantity">
+              <!---mines-->
+              <div class="mines">
+                <button>-</button>
+              </div>
+              <!---input-box-->
+              <div class="quantity-input">
+                <input type="text" value="0"/>
+              </div>
+              <!---mines-->
+              <div class="plus">
+                <button>+</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <!---person-left-->
+            <div class="person-left">
+              <h3>Infant</h3>
+              <span>(0 - 2 Yrs)</span>
+            </div>
+            <!--quantity-->
+            <div class="quantity">
+              <!---mines-->
+              <div class="mines">
+                <button>-</button>
+              </div>
+              <!---input-box-->
+              <div class="quantity-input">
+                <input type="text" value="0"/>
+              </div>
+              <!---mines-->
+              <div class="plus">
+                <button>+</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button
+        type="submit"
+        mat-raised-button
+        color="accent"
+        style="width: 100%"
+      >
+        Done
+      </button>
+    </div>
+  </mat-menu>
+</div>
+
+<div class="loader-area">
+  <app-loader></app-loader>
+</div>

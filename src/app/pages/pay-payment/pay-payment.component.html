@@ -1,0 +1,141 @@
+<!--pay-pament-area-->
+<div class="pay-payment-area">
+  <div class="pay-payment-main">
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <!---form-left-->
+      <div>
+        <div class="pay-payment-form-left">
+          <!---payment-left-top-->
+          <div class="pay-payment-form-left-top">
+            <div>
+              <!-- <h3>PASSENGER {{adultCounter}}: ADULT</h3> -->
+              <h3>Payment Information</h3>
+            </div>
+            <div>
+              <h3>SPECIAL REQUESTS</h3>
+            </div>
+          </div>
+          <!---payment-left-top-end-->
+          <!---form-field-area-->
+          <div class="form-field-area">
+            <div class="form-input">
+              <h3>Full Name</h3>
+              <mat-form-field appearance="outline" class="form-field">
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Enter your Name"
+                  formControlName="name"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="form-input">
+              <h3>Email Address</h3>
+              <mat-form-field appearance="outline" class="form-field">
+                <input
+                  type="email"
+                  matInput
+                  placeholder="Enter your email address"
+                  formControlName="email"
+                  required
+                />
+              </mat-form-field>
+            </div>
+            <div class="form-input">
+              <h3>Phone Number</h3>
+              <mat-form-field appearance="outline" class="form-field">
+                <input
+                  type="text"
+                  matInput
+                  placeholder="Enter your phone number"
+                  formControlName="phone"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---form-right-->
+      <div class="pay-payment-form-right">
+        <div class="pricing-area">
+          <div class="price-title">
+            <h3>ITINERARY & PRICING</h3>
+          </div>
+          <!--jurney-->
+          <div class="jurney-area">
+            <div class="jurney-info">
+              <!-- <h3>{{departInfo.depCityFrom}} - {{departInfo.depCityTo}}</h3> -->
+              <!-- <h4>{{departInfo.depFromAirportCode}} to {{departInfo.depToAirportCode}}</h4> -->
+              <h5>
+                <!-- {{ departTicket.departingTime }}-{{ departTicket.arrivingTime }} -->
+              </h5>
+            </div>
+            <div class="jurney-info" style="text-align: right">
+              <!-- <h3>{{ departTicket.departingFlightNum }}</h3> -->
+              <!-- <h4>{{departInfo.depDate}}-22</h4> -->
+              <!-- <h5>{{ departTicket.arrivingAircraft }}</h5> -->
+            </div>
+          </div>
+          <!---jurney-end-->
+          <!---price-btn-->
+          <!-- <div class="price-btn">
+            {{ departTicketPrice | json }}
+            {{ totalDepartTicket | json }}
+            <h3>BDT {{ departTicketPrice * totalDepartTicket }}</h3>
+          </div> -->
+          <div class="jurney-area">
+            <div class="jurney-info">
+              <!-- <h3>{{returnInfo.returnCityFrom}} - {{returnInfo.returnCityTo}}</h3> -->
+              <!-- <h4>{{returnInfo.returnFromAirportCode}} to {{returnInfo.returnToAirportCode}}</h4> -->
+              <h5>
+                <!-- {{ returnTicket.departingTime }}-{{ returnTicket.arrivingTime }} -->
+              </h5>
+            </div>
+            <div class="jurney-info" style="text-align: right">
+              <!-- <h3>{{ returnTicket.departingFlightNum }}</h3> -->
+              <!-- <h4>{{returnInfo.returnDate}}-22</h4> -->
+              <!-- <h5>{{ returnTicket.arrivingAircraft }}</h5> -->
+            </div>
+          </div>
+          <!---jurney-end-->
+          <!---price-btn-->
+          <!-- <div class="price-btn"> -->
+          <!-- <h3>BDT {{ returnTicketPrice * totalReturnTicket }}</h3> -->
+          <!-- </div> -->
+          <!--total-cost-area-->
+          <div class="total-cost-area">
+            <div>
+              <h3>TOTAL COST</h3>
+            </div>
+            <div>
+              <h3>
+                BDT
+                10000
+              </h3>
+            </div>
+          </div>
+          <!---end-->
+          <div class="amount-due">
+            <!-- <h4>AMOUNT DUE</h4> -->
+            <!-- <h3>BDT {{ totalAmount }}</h3> -->
+            <a href="#">Terms & Conditions</a>
+          </div>
+          <!---sub-btn-->
+          <div class="sub-btn">
+            <!-- <button (click)="onFormSubmit()">Continue</button> -->
+            <button style="cursor: pointer" type="submit">Continue</button>
+          </div>
+        </div>
+      </div>
+      <!--end-->
+    </form>
+  </div>
+</div>
+
+<!-- **** Bkash Payment Button Essential -->
+<button #bkashButton id="bKash_button" style="display: none">
+  Make Bkash Payment
+</button>
+<!-- END Bkash Hidden Button -->

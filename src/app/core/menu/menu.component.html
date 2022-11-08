@@ -1,0 +1,26 @@
+
+<mat-sidenav-container>
+
+  <!--[mode]="(isHandset$ | async) ? 'over' : 'side'"-->
+  <mat-sidenav #sidenav [mode]="'over'" [opened]="false" class="sidenav mat-elevation-z6">
+    <app-sidenav-list [navItem]="theSidenav"></app-sidenav-list>
+  </mat-sidenav> <!-- END SIDENAV -->
+
+  <mat-sidenav-content>
+    <app-header (sidenavNavToggle)="sidenav.open()"></app-header><!-- END HEADER MAIN -->
+<!--    <app-mega-menu fxHide.lt-sm="true"></app-mega-menu>-->
+
+    <main class="main-content" [ngClass]="marginControll">
+      <ng-content></ng-content>
+    </main>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <div class="bottom-nav">
+      <app-bottom-navbar-mobile [fxHide.gt-xs]="true" [cartCount]="10"></app-bottom-navbar-mobile>
+    </div>
+
+    <app-footer></app-footer>
+
+  </mat-sidenav-content> <!-- END MAIN CONTENT -->
+
+</mat-sidenav-container>

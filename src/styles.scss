@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import'./theme/base';
+/*** swipper-slider ****/
+@import "~swiper/swiper-bundle.min.css";
+@import "~swiper/css/effect-fade";
+@import "~swiper/css/navigation";
+@import "~swiper/css/pagination";
+@import "~swiper/css/effect-coverflow";
+::ng-deep.mat-datepicker-content-container{
+  background: #fff!important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,129 @@
+@import "src/theme/variables";
+@import "src/theme/category-menu";
+
+.mega-menu {
+  width: 100%;
+  margin-top: $toolbar-height;
+  background: #3E3E3E;
+  position: fixed;
+  z-index: 99;
+
+  .container {
+    width: 100%;
+    max-width: $theme-container-width;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.menu-ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  gap: 45px;
+
+
+  li {
+    a {
+      font-weight: 500;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: $segoe_ui_regular;
+    }
+  }
+}
+
+.cat-list-viewer {
+  width: 260px;
+  background: #16DC86;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  height: 100%;
+  margin-right: 60px;
+  cursor: pointer !important;
+  padding: 0 20px;
+
+  mat-icon {
+    color: #FFFFFF;
+    margin-right: 24px;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: $segoe_ui_bold;
+  }
+}
+
+.language-viewer {
+  margin-left: auto;
+
+
+  button {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: $segoe_ui_regular;
+
+    mat-icon {
+      color: #FFFFFF;
+    }
+  }
+
+}
+
+/**
+* DROPDOWN
+* LANGUAGE DROPDOWN
+* CATEGORY DROPDOWN
+ */
+
+::ng-deep.cat-dropdown.mat-menu-panel {
+  width: 260px !important;
+  background: #F3FBF7;
+}
+
+::ng-deep.dropdown-view.mat-menu-panel {
+  width: 200px !important;
+}
+
+
+.menu-item {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 0 6px;
+  cursor: pointer;
+
+  .select {
+    width: 24px;
+  }
+
+  img {
+    margin-right: 15px;
+  }
+
+  mat-icon {
+    margin-right: 0 !important;
+  }
+
+}
+
+/**
+DISABLE MENU TRIGGER
+ */
+.disabled-trigger {
+  pointer-events: none;
+}
+

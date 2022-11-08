@@ -1,0 +1,62 @@
+<!---card-->
+<div class="russia_tour">
+  <div class="container">
+    <div class="roussia_tour_content">
+      <div class="card"  [routerLink]="['/package-details',data?.packageSlug]" *ngFor="let data of places">
+        <!--   -->
+        <!---card-img-->
+        <div class="card-img">
+          <img [src]="data.images !== null && data.images[0]? data.images[0]:''" [alt]="data && data.packageName?data.packageName:''">
+          <div class="wish-btn">
+            <span><i class="fa fa-heart"></i></span>
+          </div>
+        </div>
+        <!---card-body-->
+        <div class="card-body">
+          <!---card-title-->
+          <div class="card-title">
+            <a>{{data?.packageName}}</a> <!-- [routerLink]="[data?.routerLink]" -->
+          </div>
+          <!---rating-->
+          <div class="rating">
+            <ul>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <!---review-->
+            <div class="review">
+              <span>0 reviews</span>
+            </div>
+          </div>
+          <!---card-bottom-->
+          <div class="card-bottom">
+            <!---days-->
+            <div class="day">
+              <div>
+                <i class="fa fa-clock"></i>
+              </div>
+              <div>
+                <span> 5 Days & 4 Nights </span>
+              </div>
+            </div>
+            <div class="price_image">
+              <img src="./assets/images/image/boost.png" alt="">
+              <span> from</span>
+            </div>
+            <!---price-->
+            <div class="price">
+              <div>
+                <h3>BDT {{data?.initialPrice}} <span>+ Airtickets </span></h3>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---card-end-->
